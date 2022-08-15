@@ -1,3 +1,11 @@
+## Starter pack with 
+
+- Vite
+- React v18.2
+- ES lint
+- Prettier
+- RTL -React testing library
+
 ## React app with Vite
 
 [Vite Documentation](https://vitejs.dev/guide/)
