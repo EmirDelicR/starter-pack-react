@@ -36,3 +36,11 @@ Add scipt to package.json
 ```js 
 "cypress": "cypress open"
 ```
+
+### Storybook
+
+```code 
+npx sb init
+
+npm run storybook 
+```
