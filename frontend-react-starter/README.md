@@ -5,3 +5,5 @@
 - ES lint
 - Prettier
 - RTL -React testing library
+- Cypress
+- Storybook
