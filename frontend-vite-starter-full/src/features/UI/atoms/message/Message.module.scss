@@ -1,0 +1,83 @@
+$info: #007bff;
+$warning: #e5e76a;
+$error: #b61515;
+$success: #008000;
+
+@mixin icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+}
+
+.message {
+  min-height: 40px;
+  border-radius: 5px;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.text {
+  font-size: 0.9rem;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.none {
+  border: 1px solid rgba(gray, 0.6);
+  box-shadow: 0 0 2px gray;
+  color: gray;
+}
+
+.error {
+  border: 1px solid rgba($error, 0.6);
+  box-shadow: 0 0 2px $error;
+  color: $error;
+}
+
+.icon-error {
+  @include icon;
+  border-right: 1px solid rgba($error, 0.6);
+}
+
+.info {
+  border: 1px solid rgba($info, 0.6);
+  box-shadow: 0 0 2px $info;
+  color: $info;
+}
+
+.icon-info {
+  @include icon;
+  border-right: 1px solid rgba($info, 0.6);
+}
+
+.warning {
+  border: 1px solid rgba($warning, 0.6);
+  box-shadow: 0 0 2px $warning;
+  color: $warning;
+}
+
+.icon-warning {
+  @include icon;
+  border-right: 1px solid rgba($warning, 0.6);
+}
+
+.success {
+  border: 1px solid rgba($success, 0.6);
+  box-shadow: 0 0 2px $success;
+  color: $success;
+}
+
+.icon-success {
+  @include icon;
+  border-right: 1px solid rgba($success, 0.6);
+}
+
+:export {
+  infoColor: $info;
+  warningColor: $warning;
+  errorColor: $error;
+  successColor: $success;
+}

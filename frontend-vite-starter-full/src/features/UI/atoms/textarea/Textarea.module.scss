@@ -1,0 +1,43 @@
+$input-color: #007bff;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  color: $input-color;
+  font-size: 0.7rem;
+
+  label {
+    font-size: 0.6rem;
+  }
+}
+
+.textarea {
+  border: 1px solid $input-color;
+  border-radius: 2px;
+  font-size: 0.5rem;
+  min-height: 35px;
+  max-height: 75px;
+  width: 200px;
+  color: $input-color;
+  overflow-y: auto;
+
+  &:focus {
+    outline: none;
+    border: 1px solid rgba($input-color, 0.6);
+    box-shadow: 0 0 2px $input-color;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.3em;
+    height: 0.1em;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(10, 132, 202, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(10, 132, 202, 0.7);
+    border-radius: 20px;
+  }
+}

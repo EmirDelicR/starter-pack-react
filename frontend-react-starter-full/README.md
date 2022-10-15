@@ -1,16 +1,14 @@
-## Starter pack with 
+## Starter pack with
 
-- CRA 5 - create react app 5 
+- CRA 5 - create react app 5
 - React v18.2
 - ES lint
 - Prettier
 - RTL -React testing library
 
-
 ### Cypress setup
 
 [Documentation](https://testing-library.com/docs/cypress-testing-library/intro/)
-
 
 ```code
 npm install --save-dev cypress @testing-library/cypress
@@ -33,14 +31,18 @@ npm install eslint-plugin-cypress --save-dev
 
 Add scipt to package.json
 
-```js 
+```js
 "cypress": "cypress open"
 ```
 
 ### Storybook
 
-```code 
+```code
 npx sb init
 
-npm run storybook 
+npm run storybook
 ```
+
+### Icons used in project
+
+https://react-icons.github.io/react-icons/icons?name=ri
