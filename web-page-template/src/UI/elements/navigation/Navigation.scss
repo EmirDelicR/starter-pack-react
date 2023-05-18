@@ -1,0 +1,148 @@
+@use 'src/assets/css' as *;
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background: var(--none);
+  transition: transform 1.2s, opacity 1.2s;
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transform: translate3d(0, 150px, 0);
+
+  &.nav--open {
+    transform: translate3d(0, 0, 0);
+
+    .nav__item--social {
+      opacity: 1;
+      transition-delay: 0.35s;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .nav__item--social {
+    opacity: 0;
+    transition: transform 1.2s, opacity 1.2s;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transform: translate3d(0, 20px, 0);
+  }
+}
+
+.link {
+  font-size: $fs-12;
+  letter-spacing: $ls-2;
+  font-weight: bold;
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: 0;
+
+  &.link--page {
+    display: block;
+    color: var(--main-color);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 40px;
+      height: 2px;
+      margin: 5px 0 0 -20px;
+      background: var(--nav-link-hover);
+      transition: transform 0.3s;
+      transform: scale3d(0, 1, 1);
+    }
+
+    &:hover:before {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  &.link--social {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0.75em;
+    border-radius: 50%;
+    box-shadow: var(--social-link-box-shadow);
+
+    > svg {
+      font-size: 1em;
+      scale: 0.9;
+      transition: scale 0.3s ease-in-out;
+
+      path {
+        fill: var(--main-color);
+      }
+    }
+
+    &:hover {
+      box-shadow: inset 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.1),
+        inset -0.1rem -0.1rem 0.1rem rgba(255, 255, 255, 0.1);
+
+      > svg {
+        scale: 1.1;
+
+        path {
+          fill: var(--nav-link-hover);
+        }
+      }
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--nav-link-hover);
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .nav {
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+
+    .nav__item {
+      width: 33%;
+      padding: 0.4em 1%;
+
+      &--social {
+        width: 100%;
+      }
+    }
+  }
+
+  .link {
+    font-size: $fs-16;
+    letter-spacing: $ls-1;
+
+    &.link--page {
+      &.link--faded {
+        font-size: $fs-13;
+      }
+    }
+
+    &.link--social {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin-left: 0.75em;
+
+      > svg {
+        font-size: 2em;
+      }
+    }
+  }
+}

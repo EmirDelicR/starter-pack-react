@@ -1,0 +1,30 @@
+@use '@assets/css/settings/index';
+
+html,
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body {
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+  }
+}
+
+.app {
+  position: relative;
+  height: 100vh;
+  background-color: var(--main-background);
+  color: var(--text-color);
+}
+
+.app.dark {
+  --main-background: var(--main-background-dark);
+  --main-color: var(--main-color-dark);
+  --nav-link-hover: var(--nav-link-hover-dark);
+  --social-link-box-shadow: var(--social-link-box-shadow-dark);
+  --page-background: var(--page-background-dark);
+}

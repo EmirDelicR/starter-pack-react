@@ -1,0 +1,47 @@
+:root {
+  // neutral
+  --white: rgba(255, 255, 255, 0.85);
+  --none: transparent;
+  --box-shadow: rgba(66, 152, 195, 0.3);
+  --text-color: #cecece;
+  --menu-button: #5f656f;
+  --dark-blue: #366194;
+  --light-blue: #2187e7;
+  // dark
+  --main-background-dark: rgba(0, 0, 0, 0.85);
+  --main-color-dark: var(--white);
+  --nav-link-hover-dark: var(--dark-blue);
+  --social-link-box-shadow-dark: 0.1rem 0.1rem 0.25rem rgba(0, 0, 0, 0.1),
+    -0.1rem -0.1rem 0.25rem rgba(255, 255, 255, 0.5);
+  --page-background-dark: #2a2b30;
+
+  // light
+  --main-background-light: var(--white);
+  --main-color-light: var(--dark-blue);
+  --nav-link-hover-light: var(--light-blue);
+  --social-link-box-shadow-light: 0.1rem 0.1rem 0.25rem rgba(255, 255, 255, 0.1),
+    -0.1rem -0.1rem 0.25rem rgba(0, 0, 0, 0.5);
+  --page-background-light: #ecf9ff;
+
+  // default
+  --main-background: var(--main-background-light);
+  --main-color: var(--main-color-light);
+  --nav-link-hover: var(--nav-link-hover-light);
+  --social-link-box-shadow: var(--social-link-box-shadow-light);
+  --page-background: var(--page-background-light);
+}
+
+$box-shadow: rgba(66, 152, 195, 0.3);
+$menu-button: #5f656f;
+$nav-link: #366194;
+$nav-link-small: #4f4f64;
+$nav-link-small-hover: $nav-link;
+$portfolio-background: #283042;
+$nav-link-hover: rgb(212, 201, 201);
+$light-border-color: rgba(62, 112, 255, 0.2);
+$light-border-color-alpha-1: rgba(62, 112, 255, 0.1);
+$light-border-color-alpha-3: rgba(62, 112, 255, 0.3);
+$light-border-color-alpha-6: rgba(62, 112, 255, 0.6);
+$light-border-color-alpha-7: rgba(62, 112, 255, 0.7);
+$light-border-color-alpha-9: rgba(62, 112, 255, 0.9);
+$bulb-light: yellow;

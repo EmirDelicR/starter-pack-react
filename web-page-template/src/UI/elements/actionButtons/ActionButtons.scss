@@ -1,0 +1,10 @@
+.action-buttons-wrapper {
+  position: absolute;
+  z-index: 10004;
+  bottom: 2vh;
+  margin: 0 2rem;
+  display: flex;
+  width: calc(100% - 4rem);
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,43 @@
+@import 'typography-variables';
+
+$arial: 'Arial';
+$main-font: $arial;
+$font-color-fallback: #2187e7;
+
+@mixin set-fonts($font-size: $fs-10, $ls: $ls-8, $lh: $lh-10) {
+  font-size: $font-size;
+  letter-spacing: $ls;
+  line-height: $lh;
+}
+
+body {
+  font-family: $main-font;
+
+  .page-name {
+    font-family: cursive;
+  }
+
+  .nav__item {
+    font-family: cursive;
+  }
+
+  .language-cour {
+    font-family: cursive;
+  }
+}
+
+h2 {
+  font-family: '#{$main-font}-Medium';
+  color: $font-color-fallback;
+}
+h3 {
+  font-family: '#{$main-font}-Bold';
+}
+
+h2 {
+  @include set-fonts($fs-28, $ls-2, $lh-33);
+}
+
+h3 {
+  @include set-fonts($fs-20, $ls-3, $lh-26);
+}

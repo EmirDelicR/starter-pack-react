@@ -1,0 +1,116 @@
+{
+  "translation": {
+    "navBar": {
+      "home": "Home",
+      "timeline": "Timeline",
+      "skill": "Fähigkeiten",
+      "certificate": "Zertifikate",
+      "portfolio": "Portfolio",
+      "tips": "Tipps",
+      "contact": "Kontakt"
+    },
+    "tabs-name": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Datenbank",
+      "utils": "Utility",
+      "description": "Beschreibung",
+      "visual": "Grapfik"
+    },
+    "skill-list": {
+      "js": "Java Script",
+      "css": "Cascading Style Sheets",
+      "mobile": "Mobile",
+      "test": "Testen",
+      "programs": "Sprache",
+      "frameworks": "Framework",
+      "db": "Datenbank",
+      "util": "Utility"
+    },
+    "graph-labels": {
+      "speed": "Geschwindigkeit",
+      "knowledge": "Wissen",
+      "level": "Niveau",
+      "enjoy": "Vergnügen",
+      "comfort": "Komfort",
+      "overview": "Meine Fähigkeitsübersicht"
+    },
+    "graph-ticks-labels": {
+      "no": "Schlecht",
+      "basic": "Basic",
+      "proficient": "Kompetent",
+      "great": "Toll",
+      "outstanding": "Hervorragend"
+    },
+    "contact": {
+      "home": "Heimatadresse",
+      "floor": "Fußboden",
+      "austria": "Österreich",
+      "work": "Arbeitsadresse"
+    },
+    "my-description": {
+      "introduce": "Hallo, mein Name ist Emir Delic-Redzepagic.",
+      "company": "Derzeit arbeite ich als Software-Ingenieur in einer österreichischen Firma {0} in der Stadt Linz.",
+      "born": "Ich bin ein Weihnachtskind und wurde am 24. Dezember geboren. Ich mag es zu programmieren und One Punch Man zu sehen",
+      "source": "Überprüfen Sie meine Webseite und ich hoffe, dass sie Ihnen gefällt. Überprüfen Sie den Quell{0}, und wenn Sie ihn verwenden möchten, ist er kostenlos.",
+      "mail": "Wenn Sie mit mir Kontakt aufnehmen oder mich einstellen möchten, können Sie meinen Lebenslauf herunterladen oder mich über meine E-Mail-Adresse {0} kontaktieren."
+    },
+    "tips": {
+      "learn": "Fahrplan lernen"
+    },
+    "skill-description": {
+      "link": "Schau in meinem Git-Repo nach, ob du etwas lernen willst, ob du einige Projekte überprüfst oder nur zum Spaß.",
+      "vue-description": "Ich habe vor drei Jahren angefangen, mit Vue.js zu arbeiten. Mein erstes JavaScript-Framework war React.js, aber später bin ich zu Vue.js gewechselt. Ich mag sie beide. Ich kann sagen, dass mein Kenntnisstand mit Vue.js wirklich hoch ist und ich genieße es, Anwendungen mit diesem Framework zu erstellen.",
+      "react-description": "Ich habe vor vier Jahren angefangen, mit React.js zu arbeiten. Version 16 hat die Effizienz und die Freude am Arbeiten mit diesem Framework erhöht. Auch nach der Einführung von React Hooks hat dies zu einem noch größeren Interesse an diesem Framework beigetragen. Ich kann sagen, dass mein Kenntnisstand mit React.js ziemlich hoch ist und ich genieße es, Anwendungen mit diesem Framework zu erstellen.",
+      "vanilla-description": "JavaScript ist eine meiner Lieblingsprogrammiersprachen. Obwohl es manchmal komisch ist, mit ihm zu arbeiten und es schwierig ist, bestimmte Verhaltensweisen zu erklären, ist er ein wesentlicher Bestandteil der Webentwicklung. Auch die Verwendung von Formularen aus anderen Programmiersprachen hat das Erlernen dieser Programmiersprache erheblich erleichtert und zu ihrer Geschwindigkeit beigetragen",
+      "es-description": "ECMAScript 6 (ES6) und die neuesten Versionen haben die Arbeit mit Javascript und das Schreiben von Code erheblich vereinfacht. Mein Lieblingsfeature ist, wie man Funktionen schreibt und den Kontext dafür nutzt. Auch die Verwendung von Klassen sowie die Vererbung und alle anderen Funktionen, die in der Back-End-Entwicklung berücksichtigt werden können.",
+
+      "ts-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "scss-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "bootstrap-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "bulma-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "vuetify-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "pwa-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "framework7-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "cordova-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "jest-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "cypress-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "node-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "python-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "php-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "express-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "django-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "codeigniter-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "postgresql-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "mysql-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "graphql-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "firebase-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "mongodb-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "redis-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "rabitmq-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "elk-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "docker-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "websocket-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "oauth-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "linux-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "git-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+      "bash-description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."
+    },
+
+    "portfolio-data": {
+      "info_system": "Informationssystem",
+      "desktop_app": "Desktop-Anwendungen",
+      "web_page": "Website",
+      "web_service": "Internetservice",
+      "mobile_app": "Mobile Applikation",
+      "programing_env": "Die Programmierumgebung:",
+      "project_1": "Informationssystem für Mietwohnungen. Das System bietet einen Überblick über die zu vermietenden Wohnungen und die Erstellung der Reservierung. Neben der Benutzeroberfläche gibt es eine Administrationsoberfläche, in der Sie Schecks buchen, dann die Wohnung und das Hinzufügen von Personal vornehmen können, um das System zu warten. Sie können Bearbeitungssuiten durchführen, das Senden von Nachrichten an den Benutzer in Form von E-Mails reservieren und Berichte für die Arbeitsperiode im PDF-Format erstellen.",
+      "project_2": "Desktop-Anwendung zur Steuerung von mobilen Autos. Es verwendet das Bluetooth-Modul HC-06. Dieses Projekt bietet eine Kombination aus Programmierung und Mikrocontroller. Das System verfügt über eingebaute Sensoren zur Erkennung der Umgebung und kann seine eigenen Bewegungsentscheidungen treffen. Es hat auch eine Videoübertragung.",
+      "project_3": "Diese Anwendung bietet die Möglichkeit, das Bild in ein Bitmap-Format zu konvertieren und dann Personen, die ein Bild aufgenommen haben, mit dem Basisbild in der Datenbank zu vergleichen. Die Software zur Erkennung und Klassifizierung von Bildern ermöglicht den Vergleich charakteristischer Gesichtspunkte und auf dieser Basis die Suche. Wenn sich eine Person in der Datenbank befindet, werden ihre in der Datenbank gespeicherten Daten ausgedruckt. Es hat auch eine integrierte Software zur Erkennung von Gesicht, Augen, Nase und Bildbearbeitungssoftware, eine Änderung der Farbhelligkeit, des Kontrasts, der Drehung und vieles mehr.",
+      "project_4": "Informationssystem für Autovermietung. Das System bietet eine Übersicht über die zur Anmietung verfügbaren Autos und die Erstellung der Reservierung. Neben der Benutzeroberfläche gibt es eine Administrationsoberfläche, in der Sie Reservierungen überprüfen, dann das Auto und Benutzer hinzufügen, neue Autos sowie die Erstellung eines Vertrages vornehmen können.",
+      "project_5": "Websites zur Kontrolle der Videoüberwachung. Sie können zwei unabhängige Kameras anzeigen. Auch in der Programmiersprache Matlab wird eine Desktop-Anwendung erstellt, die auch einen Blick auf die Kameras bietet und das Motormanagement von Kameras steuert.",
+      "project_6": "Webservice zur Datenerfassung von entfernten Standorten. Ermöglicht die Erfassung von Temperatur und Luftfeuchtigkeit mithilfe eines Mikrocontrollers. Die Daten werden an den Server gesendet und in der Datenbank gespeichert. Einmal am Tag werden dem Benutzer Daten mit maximaler und minimaler Temperatur per E-Mail über SMTP gesendet.",
+      "project_7": "Mobile Anwendungen zur Steuerung eines Mikrocontrollers. Die erste Ansicht ist für die Steuerelemente in der Wohnung oder im Haus sowie für das Geschäftsumfeld vorgesehen. Eine andere Ansicht ermöglicht die Spracherkennung und führt anhand von Wörtern oder Befehlen eine bestimmte Aktion aus. Die dritte Ansicht sammelt Daten vom Mikrocontroller und führt eine grafische Darstellung desselben aus. Alle Anwendungen sind am Mikrocontroller mit dem Bluetooth-Modul verbunden und führen so Aktionen aus, für die sie vorgegeben wurden."
+    }
+  }
+}
