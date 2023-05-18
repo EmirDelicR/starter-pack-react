@@ -1,5 +1,10 @@
 ### Setup
 
+```console
+npm install
+npm run dev
+```
+
 ### Packages
 
 #### Icons

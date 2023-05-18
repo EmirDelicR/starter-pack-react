@@ -19,17 +19,17 @@ export const SOCIAL_PAGES = [
   {
     name: 'git',
     icon: faGithub,
-    link: 'https://github.com/EmirDelicR'
+    link: '#test'
   },
   {
     name: 'linkedin',
     icon: faLinkedinIn,
-    link: 'https://linkedin.com/in/emir-delic-redzepagic-114190131'
+    link: '#'
   },
   {
     name: 'xing',
     icon: faXing,
-    link: 'https://www.xing.com/profile/Emir_DelicRedzepagic?sc_o=mxb_p'
+    link: '#'
   },
   {
     name: 'cv',
