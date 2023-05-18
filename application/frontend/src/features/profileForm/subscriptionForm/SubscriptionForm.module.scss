@@ -1,0 +1,12 @@
+.subscribe-form {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 2.5em;
+  width: 100%;
+
+  .select-wrapper {
+    width: 20em;
+  }
+}

@@ -1,0 +1,25 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 2rem;
+  padding: 1em;
+  width: 50%;
+  min-height: 50vh;
+  border: 0.01em solid var(--shadow-light-blue);
+  border-radius: 0.5em;
+  background-color: var(--shadow-light-blue);
+  color: var(--dark-blue);
+
+  .page {
+    min-height: 6em;
+    display: flex;
+    align-items: center;
+  }
+
+  .control {
+    :last-child {
+      float: right;
+    }
+  }
+}

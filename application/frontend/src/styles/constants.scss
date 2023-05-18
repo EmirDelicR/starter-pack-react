@@ -1,0 +1,34 @@
+:root {
+  /**COLOR SCHEME**/
+  --kelly-green: hsl(112, 83%, 41%);
+  --blue-green: hsl(180, 92%, 39%);
+  --white: hsl(0, 0%, 100%);
+  --gray: hsl(206, 47%, 97%);
+  // blue pallet
+  --dark-blue: hsl(205, 43%, 13%);
+  --lighter-blue: hsl(203, 100%, 39%);
+  --lightest-blue: hsl(201, 66%, 58%);
+  --shadow-dark-blue: hsl(205, 37%, 20%);
+  --shadow-light-blue: hsl(180, 62%, 96%);
+
+  // width
+  --max-container-width: 2250px;
+  --max-header-width: 500px;
+
+  // text-gradient
+  --gradient-dark: linear-gradient(
+    90deg,
+    var(--shadow-dark-blue),
+    var(--shadow-light-blue),
+    var(--shadow-light-blue),
+    var(--shadow-light-blue)
+  );
+
+  --gradient-light: linear-gradient(
+    90deg,
+    var(--shadow-light-blue),
+    var(--shadow-dark-blue),
+    var(--shadow-dark-blue),
+    var(--shadow-dark-blue)
+  );
+}

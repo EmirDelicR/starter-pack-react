@@ -1,0 +1,66 @@
+.pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2em;
+    margin: 1em 0;
+    padding: 0 0.5em;
+    border-radius: 2em;
+    background-color: var(--shadow-light-blue);
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      &:hover:enabled {
+        color: var(--lighter-blue);
+      }
+
+      &[disabled]:hover {
+        cursor: unset;
+      }
+    }
+
+    .navigation-numbers {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      cursor: pointer;
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 400ms ease;
+        color: var(--shadow-dark-blue);
+        letter-spacing: 0.1em;
+        margin: 0.25em;
+        width: 1em;
+
+        &:hover,
+        &.active {
+          border-radius: 0.3em;
+          background-color: var(--lightest-blue);
+          color: var(--white);
+        }
+
+        &.doted {
+          font-size: 0.1em;
+          min-width: 0.1em;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

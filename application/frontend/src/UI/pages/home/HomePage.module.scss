@@ -1,0 +1,112 @@
+@mixin center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-section {
+  background: linear-gradient(
+    135deg,
+    var(--dark-blue) 50%,
+    var(--shadow-light-blue) 50%
+  );
+}
+.second-section {
+  background: linear-gradient(180deg, var(--dark-blue) 50%, var(--gray) 50%);
+}
+.third-section,
+.fourth-section {
+  background: linear-gradient(
+    180deg,
+    var(--shadow-light-blue) 50%,
+    var(--lighter-blue) 50%
+  );
+}
+
+.first-section-content,
+.second-section-content,
+.third-section-content,
+.fourth-section-content {
+  @include center-flex;
+
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.last-section {
+  min-height: 40vh;
+  background-color: var(--shadow-light-blue);
+}
+
+.first-section-content {
+  background: var(--dark-blue);
+  border-end-end-radius: 50%;
+}
+.second-section-content {
+  background: var(--shadow-light-blue);
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.third-section-content {
+  background: var(--gray);
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  overflow-x: hidden;
+}
+.fourth-section-content {
+  background: var(--lighter-blue);
+  border-top-left-radius: 50%;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  gap: 0.5rem;
+  z-index: 0;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+.last-section-content {
+  margin-bottom: 4rem;
+
+  .last-section-img {
+    width: 80%;
+    aspect-ratio: 7 / 5;
+    border-radius: 2rem;
+    transform: rotateZ(200deg);
+    filter: brightness(95%) blur(1.5px);
+    margin: 3rem 0 5rem 0;
+  }
+
+  .last-section-list {
+    color: var(--lighter-blue);
+    font-size: 1.6rem;
+    margin: 1em 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--lightest-blue);
+      margin-bottom: 0.5em;
+
+      svg {
+        margin-right: 0.2em;
+      }
+    }
+  }
+}
+@media (min-width: 780px) {
+  .last-section-content {
+    margin-bottom: 0;
+
+    .last-section-img {
+      width: 100%;
+      margin: 0;
+      margin-top: 1em;
+    }
+  }
+}

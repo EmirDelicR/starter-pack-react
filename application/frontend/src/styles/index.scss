@@ -1,0 +1,50 @@
+@use 'reset.scss';
+@use 'constants.scss';
+
+/** Custom FONT ***/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap');
+/** End FONT ***/
+
+body,
+html {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--shadow-light-blue);
+  color: var(--shadow-light-blue);
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.app {
+  max-width: var(--max-container-width);
+  margin: auto;
+  background: var(--dark-blue);
+
+  .slide-enter,
+  .slide-exit {
+    transition: opacity 1.5s ease-in-out;
+  }
+
+  .slide-enter {
+    opacity: 0;
+  }
+
+  .slide-enter.slide-enter-active {
+    opacity: 1;
+  }
+}
+
+.page-loader {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dark-blue);
+}

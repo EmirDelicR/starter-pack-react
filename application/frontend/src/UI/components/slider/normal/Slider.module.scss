@@ -1,0 +1,87 @@
+.slider {
+  margin: 2rem auto;
+  overflow: hidden;
+  position: relative;
+  min-height: 50vmin;
+  width: 90vmin;
+
+  & .slide-list {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+
+    & .slide {
+      flex: 1 0 100%;
+      position: relative;
+
+      & .slide-image {
+        display: flex;
+        margin: 0 auto;
+        height: 50vmin;
+        width: 85%;
+        object-fit: cover;
+        border-radius: 2rem;
+      }
+    }
+  }
+
+  & .dots {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    position: relative;
+    z-index: 2;
+
+    & .dot {
+      background-color: var(--lightest-blue);
+      border-radius: 1rem;
+      height: 0.5rem;
+      margin: 0.2rem;
+      width: 0.5rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.selected {
+        background-color: var(--lighter-blue);
+      }
+    }
+  }
+
+  & .arrows {
+    display: flex;
+    font-size: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    height: 50vmin;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    & .arrow {
+      color: var(--lightest-blue);
+      transition: scale 300ms linear;
+
+      &:hover {
+        scale: 1.2;
+        cursor: pointer;
+      }
+    }
+  }
+
+  & .testimonial {
+    margin-inline-end: 0.5rem;
+    transition: scale 300ms ease-in;
+    cursor: pointer;
+
+    &.selected {
+      scale: 1.2;
+    }
+
+    > div:hover {
+      scale: 1;
+    }
+  }
+}

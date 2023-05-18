@@ -1,0 +1,15 @@
+{
+  "name": "Vite App",
+  "short_name": "Vite App Sample Application",
+  "theme_color": "#fff",
+  "background_color": "#fff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": [96, 128, 192, 256, 384, 512]
+    }
+  ]
+}

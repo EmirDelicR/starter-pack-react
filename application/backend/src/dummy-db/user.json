@@ -1,0 +1,52 @@
+[
+  {
+    "age": "12",
+    "avatar": "http://localhost:3100/static/d3bedd69-da1e-4310-ae2e-1ab5e3094506-image-x.png",
+    "email": "test@test.com",
+    "firstName": "Test",
+    "id": "d3bedd69-da1e-4310-ae2e-1ab5e3094506",
+    "isLoggedIn": true,
+    "isProfileUpdated": true,
+    "isSubscribed": "false",
+    "lastName": "123",
+    "subscriptions": [],
+    "password": "$argon2i$v=19$m=4096,t=3,p=1$ZW5jcmlwdGlvbi1zYWx0$eXVIo2D8k22ctBD0MlWpBYfHnRALxwjyZejtpGI1veQ",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IlRlc3QxMjMhIiwiaWF0IjoxNjg0NDAxODU4LCJleHAiOjE2ODQ0ODgyNTh9.B8a9BOKA_KqzZh3iGFoApE-ymjct2kF25N85CGLlc5A",
+    "userName": "Test 123"
+  },
+  {
+    "age": "24",
+    "avatar": "http://localhost:3100/static/63993108-2dba-4f14-bb3f-5522a74dbe2e-base64:image",
+    "email": "test_unique@test.com",
+    "firstName": "Sigmund",
+    "id": "63993108-2dba-4f14-bb3f-5522a74dbe2e",
+    "isLoggedIn": true,
+    "isProfileUpdated": true,
+    "isSubscribed": true,
+    "lastName": "Kozey",
+    "subscriptions": [
+      "news",
+      "general"
+    ],
+    "password": "$argon2i$v=19$m=4096,t=3,p=1$ZW5jcmlwdGlvbi1zYWx0$3C8wOXrFStBP0pd2gbtajG3uNca+MJKFBvo7+D0pWUg",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RfdW5pcXVlQHRlc3QuY29tIiwicGFzc3dvcmQiOiJTb21lUGFzc3dvcmQ0ISIsImlhdCI6MTY4MDk0NTgwOSwiZXhwIjoxNjgxMDMyMjA5fQ.hbAldOJT6wzOdckkJD4opnSadITwxfy5ULKzqEFAB9A",
+    "userName": "Sigmund Kozey"
+  },
+  {
+    "age": "12",
+    "avatar": "http://localhost:3100/static/cb413cde-91eb-4930-add9-a032a89ef06b-path/to/image",
+    "email": "test_swagger@test.com",
+    "firstName": "John",
+    "id": "cb413cde-91eb-4930-add9-a032a89ef06b",
+    "isLoggedIn": true,
+    "isProfileUpdated": true,
+    "isSubscribed": "true",
+    "lastName": "Doe",
+    "subscriptions": [
+      "news"
+    ],
+    "password": "$argon2i$v=19$m=4096,t=3,p=1$ZW5jcmlwdGlvbi1zYWx0$AkqkP33YgppR2bxs07oDjkaXQEkIAl0MVbRv9SwfPN4",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3Rfc3dhZ2dlckB0ZXN0LmNvbSIsInBhc3N3b3JkIjoiU3Ryb25nUGFzc3dvcmQhMTIzNCIsImlhdCI6MTY4MDk3MjEzMywiZXhwIjoxNjgxMDU4NTMzfQ.jT400068WcjPSfC1tdwKkX898dc6iTYzXuNSnXAFlDU",
+    "userName": "John Doe"
+  }
+]

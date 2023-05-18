@@ -1,0 +1,59 @@
+.contact {
+  position: relative;
+  width: 100%;
+
+  .button-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 1em 0;
+  }
+
+  .btn-talk {
+    position: absolute;
+    bottom: calc(100vh - 1em);
+    left: calc((100% - 8rem) / 2);
+    min-width: 8rem;
+    max-width: 8rem;
+    transition: bottom 0.5s ease-in-out, left 0.5s ease-in-out;
+
+    .envelope {
+      display: none;
+    }
+
+    .text {
+      display: block;
+    }
+
+    &.conner {
+      bottom: 1rem;
+      left: 0.3rem;
+      min-width: 64px;
+      min-height: 64px;
+      position: fixed;
+      z-index: 9;
+      border-radius: 50%;
+
+      .envelope {
+        display: block;
+        font-size: 3.5rem;
+      }
+
+      .text {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 780px) {
+  .contact {
+    max-width: 15rem;
+
+    .btn-talk {
+      left: 0;
+      min-width: calc(100% - 0.5rem);
+    }
+  }
+}

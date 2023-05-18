@@ -1,0 +1,180 @@
+.accordion {
+  --button-size: 2rem;
+  --panel-padding: 0.75rem;
+
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  gap: 1rem;
+  contain: content;
+
+  .accordion-panel {
+    position: relative;
+    isolation: isolate;
+    flex-basis: calc((var(--panel-padding) * 2) + var(--button-size));
+    overflow: hidden;
+    padding: var(--panel-padding);
+    border-radius: calc(((var(--panel-padding) * 2) + var(--button-size)) / 2);
+
+    &:focus-within {
+      outline: 2px solid var(--shadow-light-blue);
+      outline-offset: 4px;
+    }
+
+    &.active {
+      flex-basis: clamp(15rem, 40vh, 20rem);
+      flex-grow: 1;
+
+      .accordion-content {
+        .accordion-text {
+          opacity: 1;
+          transition: opacity 0.45s 0.3s ease-in-out;
+        }
+
+        .accordion-image {
+          filter: brightness(0.7);
+        }
+      }
+    }
+
+    .accordion-button {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      flex-direction: row-reverse;
+      background-color: transparent;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .accordion-headline {
+      position: relative;
+      font-size: 2.2em;
+      color: var(--shadow-light-blue);
+      border-radius: 1em;
+      font-weight: 700;
+      isolation: isolate;
+      display: grid;
+      align-items: center;
+    }
+
+    .accordion-icon {
+      font-size: var(--button-size);
+      background-color: var(--shadow-dark-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      padding: var(--panel-padding);
+      z-index: 10;
+
+      > svg {
+        color: var(--shadow-light-blue);
+      }
+    }
+
+    .accordion-content {
+      margin-top: var(--panel-padding);
+
+      .accordion-image {
+        position: absolute;
+        inset: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: filter 1s ease-in-out;
+      }
+
+      .accordion-text {
+        font-size: 2em;
+        text-align: justify;
+        padding: 1em;
+        background-color: rgba(0, 0, 0, 0.45);
+        color: var(--shadow-light-blue);
+        border-radius: 1rem;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .accordion-headline::after {
+    content: '';
+    position: absolute;
+    left: calc((var(--panel-padding) * 2 + var(--button-size)) * -1);
+    width: calc(100% + var(--button-size) * 3);
+    height: calc(var(--button-size) + 2 * var(--panel-padding));
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: -1;
+    border-radius: 100vw;
+  }
+}
+
+@media (min-width: 780px) {
+  .accordion {
+    flex-direction: row;
+    height: 80vh;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .accordion-panel {
+    transition: flex-basis 0.3s 0.15s ease-in-out,
+      flex-grow 0.3s 0.15s ease-in-out;
+  }
+}
+
+// Old version
+
+// .accordion {
+//   margin: 1rem 0;
+//   font-size: 1rem;
+
+//   .accordion-item {
+//     border-radius: 0.2em;
+//     overflow: hidden;
+//     margin: 0.2em 1em;
+//   }
+//   .accordion-toggle {
+//     cursor: pointer;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+//     background-color: var(--lighter-blue);
+//     color: var(--white);
+//     padding: 0.6em 1em;
+
+//     &:hover {
+//       background-color: var(--lightest-blue);
+//     }
+//   }
+
+//   .accordion-toggle h3 {
+//     margin: 0;
+//     font-size: 1.5em;
+//     text-transform: capitalize;
+//   }
+
+//   .accordion-content {
+//     background-color: var(--shadow-light-blue);
+//     transition: all 0.1s ease-out;
+//     color: var(--shadow-dark-blue);
+//     font-size: 1.1em;
+//     padding: 0 1em;
+//     max-height: 0;
+//     height: 0;
+//   }
+
+//   .active {
+//     transition: all 0.3s 0.15s ease-in;
+//     padding-top: 1em;
+//     padding-bottom: 1em;
+//     max-height: 4em;
+//     height: auto;
+//     overflow-y: auto;
+//   }
+// }

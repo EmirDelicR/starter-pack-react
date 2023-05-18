@@ -1,0 +1,66 @@
+.modal:modal {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 80vw;
+  min-height: 50vh;
+  border: none;
+  border-radius: 1rem;
+  transition: opacity 600ms ease-in-out;
+  opacity: 1;
+
+  .footer,
+  .header,
+  .body {
+    width: 100%;
+  }
+
+  .body {
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--lighter-blue);
+
+    svg {
+      cursor: pointer;
+      transition: transform 300ms ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &::backdrop {
+    background: rgba(0, 123, 199, 0.25);
+  }
+}
+
+dialog[open] {
+  animation: show 600ms ease normal;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translateY(-110%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@media (min-width: 1250px) {
+  .modal:modal {
+    max-width: min(50vw, 1000px);
+    min-width: min(50vw, 1000px);
+  }
+}

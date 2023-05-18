@@ -1,0 +1,29 @@
+.upload {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  border: 1px solid var(--lighter-blue);
+  color: var(--lighter-blue);
+  border-radius: 0.2em;
+  padding: 0.4em;
+  margin-top: 1em;
+  width: fit-content;
+  cursor: pointer;
+
+  .upload-icon {
+    margin-right: 0.5em;
+    font-size: 1.4em;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1);
+  }
+
+  .upload-input {
+    display: none;
+  }
+
+  &:hover {
+    .upload-icon {
+      transform: scale(1.2);
+    }
+  }
+}

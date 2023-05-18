@@ -1,0 +1,19 @@
+.signin {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+
+  h3 {
+    font-size: 1.8rem;
+    color: hsl(211, 100%, 50%);
+    text-align: center;
+    margin-top: 0;
+  }
+}
+
+.content {
+  width: 70%;
+}

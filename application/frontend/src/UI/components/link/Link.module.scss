@@ -1,0 +1,57 @@
+$border: 0.15em solid var(--lightest-blue);
+$size: 0.3em;
+
+@mixin pseudo-element($type) {
+  width: $size;
+  height: $size;
+  background: transparent;
+  content: '';
+  position: absolute;
+  transition: 0.3s ease-out;
+  opacity: 1;
+  transform: rotate(45deg);
+  top: calc(50% - calc($size / 2));
+
+  @if $type == 'before' {
+    right: calc($size * -2);
+    border-right: $border;
+    border-top: $border;
+  } @else {
+    left: calc($size * -2);
+    border-left: $border;
+    border-bottom: $border;
+  }
+}
+
+.link {
+  font-size: 1.2rem;
+  color: var(--lightest-blue);
+  text-decoration: none;
+  padding: 0.4em 0.8em;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  transition: 0.3s ease-out;
+
+  &::before {
+    @include pseudo-element('before');
+  }
+  &::after {
+    @include pseudo-element('after');
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: var(--lighter-blue);
+
+    &::before {
+      opacity: 1;
+      right: $size;
+    }
+
+    &::after {
+      opacity: 1;
+      left: $size;
+    }
+  }
+}

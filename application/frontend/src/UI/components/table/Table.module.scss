@@ -1,0 +1,116 @@
+.table {
+  font-size: 1.2rem;
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+  margin-bottom: 1rem;
+
+  white-space: pre-wrap;
+
+  ::-webkit-scrollbar {
+    height: 0.3em;
+    width: 0.25em;
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--shadow-light-blue);
+    border-radius: 1em;
+  }
+
+  td,
+  th {
+    text-align: center;
+    padding: 0.5em;
+  }
+
+  thead th {
+    color: var(--shadow-light-blue);
+    background-color: var(--lightest-blue);
+
+    .sort-header {
+      cursor: pointer;
+
+      &:before {
+        content: '↕️';
+        position: relative;
+        margin-right: 0.1em;
+        top: -1px;
+        color: var(--dark-blue);
+      }
+    }
+
+    &:nth-child(odd) {
+      background-color: var(--lighter-blue);
+    }
+  }
+
+  tr:nth-child(even) {
+    border-top: 0.1em solid var(--lighter-blue);
+    border-bottom: 0.1em solid var(--lighter-blue);
+  }
+
+  tbody {
+    td {
+      vertical-align: middle;
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .table {
+    display: block;
+
+    thead {
+      float: left;
+
+      th {
+        width: 6em;
+        display: block;
+        text-align: left;
+        border-right: 1px solid var(--dark-blue);
+      }
+    }
+
+    tbody {
+      display: block;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+
+      tr {
+        display: table-cell;
+
+        &:nth-child(even) {
+          border: none;
+        }
+
+        td {
+          scroll-snap-align: center;
+          min-width: 14em;
+        }
+      }
+    }
+
+    td,
+    th {
+      height: 3em;
+      box-sizing: border-box;
+      overflow-y: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    tr td {
+      border-right: 1px solid var(--dark-blue);
+
+      &:nth-child(odd) {
+        background-color: var(--lighter-blue);
+      }
+
+      &:nth-child(even) {
+        background-color: var(--lightest-blue);
+      }
+    }
+  }
+}

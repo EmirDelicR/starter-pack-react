@@ -1,0 +1,80 @@
+$info: #007bff;
+$warning: #e5e76a;
+$error: #b61515;
+$success: #008000;
+
+@mixin icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+}
+
+@mixin message-style($color) {
+  border: 1px solid rgba($color, 0.6);
+  box-shadow: 0 0 2px $color;
+  color: $color;
+}
+
+.message {
+  font-size: 1rem;
+  min-height: 1.8em;
+  border-radius: 0.2em;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin: 0.5em;
+}
+
+.text {
+  padding: 0.2em;
+  display: flex;
+  align-items: center;
+}
+
+.none {
+  @include message-style(gray);
+}
+
+.error {
+  @include message-style($error);
+}
+
+.icon-error {
+  @include icon;
+  border-right: 1px solid rgba($error, 0.6);
+}
+
+.info {
+  @include message-style($info);
+}
+
+.icon-info {
+  @include icon;
+  border-right: 1px solid rgba($info, 0.6);
+}
+
+.warning {
+  @include message-style($warning);
+}
+
+.icon-warning {
+  @include icon;
+  border-right: 1px solid rgba($warning, 0.6);
+}
+
+.success {
+  @include message-style($success);
+}
+
+.icon-success {
+  @include icon;
+  border-right: 1px solid rgba($success, 0.6);
+}
+
+:export {
+  infoColor: $info;
+  warningColor: $warning;
+  errorColor: $error;
+  successColor: $success;
+}

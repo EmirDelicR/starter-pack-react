@@ -1,0 +1,217 @@
+.navbar {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.8em;
+  position: relative;
+  clip-path: unset;
+  height: 2rem;
+  background: linear-gradient(
+    15deg,
+    var(--lightest-blue) 35%,
+    var(--lighter-blue) 100%
+  );
+}
+
+.navigation {
+  display: none;
+}
+
+.logo {
+  overflow: hidden;
+
+  > svg {
+    width: 2rem;
+    height: 2rem;
+    transform: scale(2.5);
+
+    path {
+      fill: var(--shadow-light-blue);
+    }
+  }
+}
+
+.nav-link,
+.header {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1em;
+  color: var(--dark-blue);
+  border-radius: 0.2em;
+  height: 0.5rem;
+
+  > svg {
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 0.25em;
+  }
+
+  .close {
+    > svg path {
+      fill: var(--lighter-blue);
+    }
+  }
+}
+
+.mobile {
+  display: flex;
+  flex-direction: column;
+  z-index: 1000000;
+
+  // This number must match number of navigation items in component + 1
+  $count: 6;
+  --duration: 0.5s;
+  --easing: ease-in-out;
+  --delay-out: 0s;
+  --delay-in: 0.4s;
+
+  .nav-link,
+  .header {
+    background: var(--white);
+    width: 5.6rem;
+    margin-bottom: 0.1rem;
+    transform-origin: 0 0;
+    transition: transform var(--duration) var(--easing),
+      color var(--duration) var(--easing);
+    transition-delay: var(--delay-in);
+
+    &:hover,
+    &.active,
+    &:focus {
+      background: var(--shadow-light-blue);
+      color: var(--lighter-blue);
+      outline: none;
+    }
+  }
+
+  @for $i from 1 through $count {
+    a:nth-of-type(#{$i}) {
+      --delay-in: calc(1s * (#{$count} - #{$i}) * 0.1);
+    }
+  }
+
+  .header {
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.5);
+    justify-content: space-between;
+
+    .close {
+      padding-top: 0.1em;
+      font-size: 1.2em;
+    }
+  }
+
+  .btn {
+    cursor: pointer;
+    position: absolute;
+    top: 0.8rem;
+    left: 0.8rem;
+    border: none;
+    padding: 0;
+    width: 7.7rem;
+    height: 2.5rem;
+    transform-origin: 0 0;
+    transition: transform var(--duration) var(--easing);
+    transition-delay: 0s;
+    opacity: 0;
+  }
+
+  &.closed {
+    .nav-link,
+    .header {
+      transform: translateY(0) scaleY(0.1) scaleX(0.2);
+      transition-delay: var(--delay-out);
+      color: transparent;
+    }
+
+    @for $i from 1 through $count {
+      a:nth-of-type(#{$i}) {
+        --delay-out: calc(1s * (#{$i} * 0.1));
+
+        @if $i < 3 {
+          transform: translateY(calc((1.5rem + 0.5em) * #{$i} * -1))
+            scaleY(0.1)
+            scaleX(0.2);
+        } @else {
+          transform: translateY(calc((1rem + 0.74em) * (#{$i} * 1.5) * -1))
+            scaleY(0.1)
+            scaleX(0.2);
+        }
+      }
+    }
+
+    .btn {
+      transition-delay: 0s;
+      transform: scaleY(0.7) scaleX(0.2);
+      width: 7rem;
+      height: 2rem;
+      top: 0.8rem;
+      left: 0.8rem;
+    }
+  }
+}
+
+@media (min-width: 780px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 2em;
+    clip-path: polygon(0 0, 100% 0%, 100% 74%, 0% 100%);
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .navigation {
+    display: flex;
+  }
+
+  .logo {
+    > svg {
+      width: 4em;
+      height: 4em;
+
+      transform: scale(1.8);
+    }
+  }
+
+  .nav-link {
+    margin-right: 0.2em;
+    justify-content: center;
+    color: var(--shadow-light-blue);
+    min-width: 2.5em;
+    height: 1em;
+    overflow: hidden;
+    padding: 0 0.7em;
+    letter-spacing: 0.01em;
+    line-height: 2em;
+
+    span {
+      position: relative;
+      display: inline-block;
+      transition: all 0.3s;
+
+      &:before {
+        position: absolute;
+        top: 100%;
+        content: attr(data-hover);
+        color: var(--shadow-dark-blue);
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &.active {
+      outline: none;
+      span {
+        transform: translateY(-100%);
+      }
+    }
+  }
+}

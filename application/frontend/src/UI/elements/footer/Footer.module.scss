@@ -1,0 +1,117 @@
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content {
+  display: flex;
+  flex-direction: column-reverse;
+  font-size: 1.4rem;
+  padding: 0 1em;
+  margin-bottom: 1rem;
+
+  .copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+      width: 8em;
+      height: 5em;
+      position: absolute;
+      bottom: -0.2em;
+
+      g {
+        fill: var(--shadow-light-blue);
+      }
+    }
+
+    .text {
+      position: absolute;
+      display: flex;
+      bottom: 0.5em;
+    }
+  }
+
+  .link-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    justify-content: space-around;
+  }
+}
+
+/* Wave style */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+@for $i from 1 through 4 {
+  .parallax > use:nth-child(#{$i}) {
+    animation-delay: calc(#{$i} * -1s);
+    animation-duration: calc((#{$i} * 3s) + 4s);
+  }
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+@media (min-width: 780px) {
+  .content {
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: calc(100% - 2.2em);
+    height: 2.8em;
+
+    .copyright {
+      flex-direction: row;
+      align-items: flex-end;
+
+      .logo {
+        position: relative;
+        width: 4.5em;
+        height: 4.5em;
+        left: 7.5em;
+        bottom: 0.3em;
+      }
+
+      .text {
+        position: relative;
+      }
+    }
+
+    .link-wrapper {
+      flex-wrap: nowrap;
+
+      .link {
+        border-bottom: 0.05em solid var(--shadow-light-blue);
+        margin-right: 0.5em;
+
+        > svg {
+          path {
+            fill: var(--shadow-light-blue);
+          }
+        }
+
+        &:hover {
+          > svg {
+            path {
+              fill: var(--lighter-blue);
+            }
+          }
+        }
+      }
+    }
+  }
+}

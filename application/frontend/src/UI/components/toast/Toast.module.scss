@@ -1,0 +1,59 @@
+.toast {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+  z-index: 10000;
+  font-size: 1.5rem;
+  //line-height: 0.5em;
+  letter-spacing: 0.1em;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.element {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.5em;
+  min-width: 25vw;
+  min-height: 2em;
+  backdrop-filter: blur(0.5em);
+  border-radius: 0.5em;
+  color: var(--shadow-light-blue);
+  margin-bottom: 0.5em;
+  animation: 0.3s cubic-bezier(0.42, 0, 0, 1) slide-in-bottom;
+
+  &.default {
+    background: hsl(211, 100%, 50%);
+  }
+
+  &.error {
+    background: rgba(255, 0, 0, 0.7);
+  }
+
+  &.success {
+    background: hsl(130 52% 46%);
+  }
+
+  > span {
+    min-height: 1em;
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 0.5em;
+  }
+}
+
+@keyframes slide-in-bottom {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,65 @@
+@mixin focus {
+  color: var(--lighter-blue);
+  border-radius: 0;
+  width: 300px;
+  padding-right: 2em;
+  border-bottom-color: var(--shadow-dark-blue);
+  transition: width 500ms ease-in-out;
+
+  &::placeholder {
+    color: var(--lighter-blue);
+    letter-spacing: 0.1em;
+    font-weight: 100;
+  }
+}
+
+.search-box {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0;
+
+  .input-search {
+    font-size: 1rem;
+    height: 2em;
+    width: 2rem;
+    border-style: none;
+    outline: none;
+    border-radius: 1em;
+    transition: all 0.5s ease-in-out;
+    background-color: transparent;
+    color: transparent;
+    border-bottom: 0.1em solid transparent;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus {
+      @include focus;
+    }
+  }
+
+  .btn-search {
+    font-size: 2rem;
+    width: 1.2em;
+    height: 1.2em;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.2em;
+    color: var(--shadow-light-blue);
+    background-color: transparent;
+    pointer-events: painted;
+
+    &:focus ~ .input-search {
+      @include focus;
+    }
+  }
+}

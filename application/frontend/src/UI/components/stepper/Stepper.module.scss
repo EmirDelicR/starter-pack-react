@@ -1,0 +1,43 @@
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  padding: 0 0.1em;
+
+  .line-wrapper {
+    width: 100%;
+    background-color: var(--lightest-blue);
+    height: 0.2em;
+
+    .line {
+      height: 0.2em;
+
+      &.active {
+        display: block;
+        animation: grow 0.3s ease-in;
+        background-color: var(--shadow-dark-blue);
+      }
+    }
+  }
+
+  .icon {
+    width: 10em;
+    height: 3em;
+    fill: var(--lightest-blue);
+
+    &.active {
+      fill: var(--shadow-dark-blue);
+    }
+  }
+}
+
+@keyframes grow {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

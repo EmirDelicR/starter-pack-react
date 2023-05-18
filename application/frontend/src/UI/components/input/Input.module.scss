@@ -1,0 +1,160 @@
+:root {
+  /* set color by default to overwrite where :has is not supported */
+  --label-color: var(--lighter-blue);
+  --transition: 0.2s;
+  --valid: hsl(130 52% 46%);
+  --invalid: hsl(18 100% 50%);
+  --focus: hsl(44 83% 53%);
+  --blur: var(--lighter-blue);
+}
+
+.input {
+  position: relative;
+  font-size: 1.4rem;
+  width: calc(100% - 0.4em);
+  margin: 1.1em 0.2em;
+  height: 2rem;
+
+  &:has(:invalid) {
+    --label-color: var(--invalid);
+  }
+
+  &:has(:invalid:not(:focus)) {
+    animation: shake 0.65s;
+  }
+
+  &:has(:focus) {
+    --label-color: var(--focus);
+  }
+
+  &:has(:valid) {
+    --label-color: var(--valid);
+  }
+
+  &:has(:valid) span {
+    animation: twirl 1s calc(var(--index) * 0.1s);
+  }
+
+  &:has(:placeholder-shown) {
+    --label-color: var(--blur);
+  }
+
+  &:has(:placeholder-shown:not(:focus)) {
+    animation: none;
+  }
+}
+
+.eye {
+  font-size: 0.8em;
+  position: absolute;
+  top: calc(1em / 2);
+  right: 0.4rem;
+  z-index: 1;
+  color: var(--label-color);
+  cursor: pointer;
+}
+
+.field {
+  position: absolute;
+  display: flex;
+  width: calc(100% - 2em);
+  box-shadow: none;
+  background: transparent;
+  outline: none;
+  padding: 0 1.4em 0 0.4em;
+  z-index: 1;
+  font-size: 0.7em;
+  height: 2.1em;
+  letter-spacing: 0.05em;
+  color: var(--label-color);
+  border-radius: 0.2em;
+  border: 0.1em solid var(--label-color);
+  transition: border-color var(--transition);
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:focus,
+  &:valid,
+  &:invalid:not(:placeholder-shown) {
+    + .label {
+      transform: translateX(-0.3em) translateY(-1.6em);
+      font-size: 0.6em;
+      padding: 0 0.3em;
+      color: var(--blur);
+    }
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  font-size: 0.7em;
+  height: 2.1em;
+  padding: 0 0.4em;
+  transition: 0.5s;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+
+  span {
+    display: inline-block;
+    transition: color var(--transition);
+    color: var(--label-color);
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.hint {
+  position: absolute;
+  right: -1.2em;
+  top: 0.03em;
+  font-size: 1.2em;
+  color: var(--blur);
+  cursor: pointer;
+  height: 2.1rem;
+}
+
+.hint-text {
+  font-size: 1.6rem;
+  max-width: 45ch;
+  line-height: 1.2em;
+  text-align: justify;
+}
+
+@keyframes twirl {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(-4%);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(4%);
+  }
+}

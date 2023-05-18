@@ -1,0 +1,65 @@
+[
+  {
+    "id": "<b5c4609a-98de-31c5-bdf4-84063edd2d6a@test.com>",
+    "date": "3/26/2023,11:44:38AM",
+    "from": "test@test.com",
+    "previewUrl": "https://ethereal.email/message/ZBWMl-KaqoBzXEu-ZBWMmDbzlc7YNZFIAAAAAY5VFaXrNyuXo8chwrcyq6A",
+    "message": "Sometext..."
+  },
+  {
+    "id": "<b5c4609a-98de-31c5-bdf4-84063edd2d6a@test1.com>",
+    "date": "3/25/2023,11:40:38AM",
+    "from": "test1@test.com",
+    "previewUrl": "https://ethereal.email/message/ZBWMl-KaqoBzXEu-ZBWMmDbzlc7YNZFIAAAAAY5VFaXrNyuXo8chwrcyq6A",
+    "message": "Sometext..."
+  },
+  {
+    "id": "<b5c4609a-98de-31c5-bdf4-84063edd2d6a@test2.com>",
+    "date": "3/26/2023,11:24:38AM",
+    "from": "test2@test.com",
+    "previewUrl": "https://ethereal.email/message/ZBWMl-KaqoBzXEu-ZBWMmDbzlc7YNZFIAAAAAY5VFaXrNyuXo8chwrcyq6A",
+    "message": "Somedummytext..."
+  },
+  {
+    "id": "<b5c4609a-98de-31c5-bdf4-84063edd2d6a@test3.com>",
+    "date": "3/21/2023,11:44:38AM",
+    "from": "test3@test.com",
+    "previewUrl": "https://ethereal.email/message/ZBWMl-KaqoBzXEu-ZBWMmDbzlc7YNZFIAAAAAY5VFaXrNyuXo8chwrcyq6A",
+    "message": "Sometext..."
+  },
+  {
+    "id": "<b5c4609a-98de-31c5-bdf4-84063edd2d6a@test4.com>",
+    "date": "3/22/2023,11:44:38AM",
+    "from": "test4@test.com",
+    "previewUrl": "https://ethereal.email/message/ZBWMl-KaqoBzXEu-ZBWMmDbzlc7YNZFIAAAAAY5VFaXrNyuXo8chwrcyq6A",
+    "message": "Sometext..."
+  },
+  {
+    "id": "<b5c4609a-98de-31c5-bdf4-84063edd2d6a@test5.com>",
+    "date": "3/22/2023,11:54:38AM",
+    "from": "test5@test.com",
+    "previewUrl": "https://ethereal.email/message/ZBWMl-KaqoBzXEu-ZBWMmDbzlc7YNZFIAAAAAY5VFaXrNyuXo8chwrcyq6A",
+    "message": "Sometext..."
+  },
+  {
+    "id": "<812dab3d-087e-ac66-ffff-1b21ad5a6541@test.com>",
+    "date": "4/8/2023, 11:24:47 AM",
+    "from": "test_unique@test.com",
+    "previewUrl": "https://ethereal.email/message/ZDEy3oa36C.1iATrZDEy30XWwU4NsuCgAAAAAcq9DEuVOihOSY0Jf6iWVbM",
+    "message": "Ex dolores eaque culpa sed."
+  },
+  {
+    "id": "<94f1f5d8-3600-a2bd-c4f9-c0bdcbc6b7dd@test.com>",
+    "date": "4/8/2023, 1:17:18 PM",
+    "from": "test@test.com",
+    "previewUrl": "https://ethereal.email/message/ZDFNPIa36C.1i.1XZDFNPp7rNWhe-0SPAAAAAVdw756po36Lk9RB6UVAk.I",
+    "message": "Some text message ..."
+  },
+  {
+    "id": "<29c87d5f-d5f3-6968-ebb8-4c2665ad83f6@test.com>",
+    "date": "4/8/2023, 6:38:04 PM",
+    "from": "test@test.com",
+    "previewUrl": "https://ethereal.email/message/ZDGYa4a36C.1l9v7ZDGYbDMxAIniZmdGAAAAAfeWTmteVY0DeQx26ZIqwtw",
+    "message": "Some text message ..."
+  }
+]
