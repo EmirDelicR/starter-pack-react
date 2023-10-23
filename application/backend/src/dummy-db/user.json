@@ -11,7 +11,7 @@
     "lastName": "123",
     "subscriptions": [],
     "password": "$argon2i$v=19$m=4096,t=3,p=1$ZW5jcmlwdGlvbi1zYWx0$eXVIo2D8k22ctBD0MlWpBYfHnRALxwjyZejtpGI1veQ",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IlRlc3QxMjMhIiwiaWF0IjoxNjg0NDAxODU4LCJleHAiOjE2ODQ0ODgyNTh9.B8a9BOKA_KqzZh3iGFoApE-ymjct2kF25N85CGLlc5A",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJwYXNzd29yZCI6IlRlc3QxMjMhIiwiaWF0IjoxNjk4MDUxMDY3LCJleHAiOjE2OTgxMzc0Njd9.ZeXIEc8nn9U2R8sY6W98HeZLamZfijECmfboKubQV2w",
     "userName": "Test 123"
   },
   {
