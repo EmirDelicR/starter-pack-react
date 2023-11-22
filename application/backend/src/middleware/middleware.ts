@@ -1,6 +1,6 @@
 import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { origins } from 'src/config/corsOptions';
+import { ORIGINS } from 'src/config/cors';
 
 import { IApiResponse } from 'src/interfaces/api';
 
@@ -8,7 +8,7 @@ import { writeErrorToFile } from 'src/util/file';
 
 const credentials = (req: Request, res: Response, next: NextFunction) => {
   const { origin } = req.headers;
-  if (origin && origins.includes(origin)) {
+  if (origin && ORIGINS.includes(origin)) {
     res.header('Access-Control-Allow-Credentials', 'true');
   }
   next();

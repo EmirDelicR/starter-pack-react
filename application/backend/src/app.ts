@@ -5,7 +5,7 @@ import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import path from 'path';
-import { corsOptions } from 'src/config/corsOptions';
+import { corsOptions } from 'src/config/cors';
 
 import { middleware } from 'src/middleware/middleware';
 
