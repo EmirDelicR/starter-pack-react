@@ -121,6 +121,12 @@ sudo npm install -g n
 sudo n stable
 ```
 
+## Update packages
+
+```console
+npx npm-check-updates -u
+```
+
 [Back to TOP](#documentation)
 
 ## typescript
