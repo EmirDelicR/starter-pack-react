@@ -7,7 +7,7 @@
     "lint": "eslint '**/*.{ts,tsx}'",
     "test": "jest",
     "test-watch": "jest --watch",
-    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' -r tsconfig-paths/register src/app.ts",
+    "start": "nodemon",
     "start-server": "tsc && node dist/app.js"
   },
   "keywords": [
