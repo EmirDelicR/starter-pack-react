@@ -2,7 +2,7 @@ import { Application } from 'express';
 import path from 'path';
 import swaggerUi from 'swagger-ui-express';
 
-import { middleware } from 'src/middleware/middleware';
+import { middleware } from 'src/middleware';
 
 import {
   authRouter,

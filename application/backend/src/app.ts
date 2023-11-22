@@ -7,7 +7,7 @@ import morgan from 'morgan';
 import path from 'path';
 import { corsOptions } from 'src/config/cors';
 
-import { middleware } from 'src/middleware/middleware';
+import { middleware } from 'src/middleware';
 
 import registerRoutes from 'src/routes/index';
 
