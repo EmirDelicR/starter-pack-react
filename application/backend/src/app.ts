@@ -12,7 +12,7 @@ import { middleware } from 'src/middleware/middleware';
 import registerRoutes from 'src/routes/index';
 
 import { createFileStream } from 'src/util/file';
-import Console from 'src/util/logger/console';
+import Console from 'src/util/logger';
 
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config({ debug: true });

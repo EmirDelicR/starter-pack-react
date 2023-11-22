@@ -2,7 +2,7 @@ import { Router } from 'express';
 
 import { userController } from 'src/controllers/user';
 
-import upload from 'src/util/upload/storage';
+import upload from 'src/util/upload';
 
 const userRouter = Router();
 /** GET /user */

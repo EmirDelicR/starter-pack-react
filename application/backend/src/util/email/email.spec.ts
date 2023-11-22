@@ -18,7 +18,7 @@ const INFO = {
 };
 const mockSendEmail = jest.fn();
 
-jest.mock('src/util/logger/console', () => ({
+jest.mock('src/util/logger', () => ({
   info: jest.fn()
 }));
 

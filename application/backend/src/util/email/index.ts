@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 import { getAllEmailsFromDb } from 'src/util/db';
 import { writeToDbFile } from 'src/util/file';
-import Console from 'src/util/logger/console';
+import Console from 'src/util/logger';
 
 export const sendMail = async (
   email: string,

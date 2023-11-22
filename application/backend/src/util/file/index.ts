@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import Console from 'src/util/logger/console';
+import Console from 'src/util/logger';
 
 export const createFileStream = (
   directory: string,
