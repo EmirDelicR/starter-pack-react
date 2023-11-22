@@ -50,22 +50,22 @@ describe('Email utils', () => {
       readFromFileSpy.mockReturnValue([]);
       await sendMail(EMAIL, NAME, MESSAGE);
 
-      expect(createTransportSpy).toBeCalledWith({
+      expect(createTransportSpy).toHaveBeenCalledWith({
         auth: { pass: 'password', user: 'test@test.com' },
         host: 'smtp.ethereal.email',
         port: 587,
         secure: false
       });
 
-      expect(mockSendEmail).toBeCalledWith({
+      expect(mockSendEmail).toHaveBeenCalledWith({
         from: `${NAME} <${EMAIL}>`,
         to: 'test@test.com',
         subject: 'Request from user.',
         text: MESSAGE
       });
 
-      expect(getTestMessageUrlSpy).toBeCalledWith(INFO);
-      expect(writeToDbFileSpy).toBeCalledWith(
+      expect(getTestMessageUrlSpy).toHaveBeenCalledWith(INFO);
+      expect(writeToDbFileSpy).toHaveBeenCalledWith(
         [
           {
             date: expect.any(String),

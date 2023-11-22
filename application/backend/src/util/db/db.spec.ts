@@ -154,7 +154,7 @@ describe('DB utils', () => {
       readFromFileSpy.mockReturnValue([USER_MOCK_DATA]);
 
       patchUserInDb({ ...USER_MOCK_DATA, firstName: 'John' });
-      expect(writeToDbFileSpy).toBeCalledWith(
+      expect(writeToDbFileSpy).toHaveBeenCalledWith(
         [{ ...USER_MOCK_DATA, firstName: 'John' }],
         'user.json'
       );
