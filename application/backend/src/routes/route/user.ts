@@ -5,14 +5,10 @@ import { userController } from 'src/controllers/user';
 import upload from 'src/util/upload/storage';
 
 const userRouter = Router();
-/**
- * GET /user
- */
+/** GET /user */
 userRouter.get('/user/:id', userController.getUser);
 
-/**
- * UPDATE /user/:id
- */
+/** UPDATE /user/:id */
 userRouter.patch(
   '/user/:id',
   upload.single('image'),

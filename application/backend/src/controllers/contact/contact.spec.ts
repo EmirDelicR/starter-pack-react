@@ -26,7 +26,7 @@ describe('Contact controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Email must be provided!'
       );
     });
@@ -40,7 +40,7 @@ describe('Contact controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Email address must be valid!'
       );
     });
@@ -54,7 +54,7 @@ describe('Contact controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Name must be provided!'
       );
     });
@@ -68,7 +68,7 @@ describe('Contact controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Message must be provided!'
       );
     });
@@ -86,9 +86,9 @@ describe('Contact controller', () => {
         nextMock
       );
 
-      expect(sendEmailSpy).toBeCalledWith('t@t.com', 'name', 'test');
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(sendEmailSpy).toHaveBeenCalledWith('t@t.com', 'name', 'test');
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: {},
         message: 'Message send successful',
         status: 200

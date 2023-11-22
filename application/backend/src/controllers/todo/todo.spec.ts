@@ -28,9 +28,9 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: [],
         message: 'Fetch items successful',
         status: 200
@@ -47,9 +47,9 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: [TODO_MOCK_DATA],
         message: 'Fetch items successful',
         status: 200
@@ -66,9 +66,9 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: [],
         message: 'Fetch items successful',
         status: 200
@@ -88,9 +88,11 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(writeErrorToFileSpy).toBeCalledWith('Error: Error occurred!');
-      expect(nextMock).toBeCalledWith(error);
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
+        'Error: Error occurred!'
+      );
+      expect(nextMock).toHaveBeenCalledWith(error);
     });
   });
 
@@ -105,9 +107,9 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: {
           numberOfPages: 0,
           items: []
@@ -127,9 +129,9 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: {
           numberOfPages: 1,
           items: [TODO_MOCK_DATA]
@@ -153,9 +155,9 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: {
           numberOfPages: 2,
           items: [TODO_MOCK_DATA, TODO_MOCK_DATA]
@@ -185,9 +187,9 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: {
           numberOfPages: 2,
           items: [TODO_MOCK_DATA]
@@ -221,9 +223,9 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: {
           numberOfPages: 2,
           items: [TODO_MOCK_DATA, TODO_MOCK_DATA]
@@ -257,9 +259,9 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: {
           numberOfPages: 2,
           items: [TODO_MOCK_DATA, TODO_MOCK_DATA, TODO_MOCK_DATA]
@@ -284,8 +286,8 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         `Error: User with ${USER_MOCK_DATA.id} was not found`
       );
     });
@@ -303,9 +305,9 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(2);
-      expect(responseMock.status).toBeCalledWith(201);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(2);
+      expect(responseMock.status).toHaveBeenCalledWith(201);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: {
           userId: USER_MOCK_DATA.id,
           id: expect.any(String),
@@ -331,9 +333,11 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(writeErrorToFileSpy).toBeCalledWith('Error: Error occurred!');
-      expect(nextMock).toBeCalledWith(error);
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
+        'Error: Error occurred!'
+      );
+      expect(nextMock).toHaveBeenCalledWith(error);
     });
   });
 
@@ -355,7 +359,7 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Item some_id was not found'
       );
     });
@@ -377,7 +381,7 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         `Error: Item ${TODO_MOCK_DATA.id} was not found`
       );
     });
@@ -399,9 +403,9 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: null,
         message: `Item with id ${TODO_MOCK_DATA.id} was deleted successfully`,
         status: 200
@@ -424,9 +428,11 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(writeErrorToFileSpy).toBeCalledWith('Error: Error occurred!');
-      expect(nextMock).toBeCalledWith(error);
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
+        'Error: Error occurred!'
+      );
+      expect(nextMock).toHaveBeenCalledWith(error);
     });
   });
 
@@ -448,7 +454,7 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         `Error: Item ${TODO_MOCK_DATA.id} was not found`
       );
     });
@@ -470,9 +476,9 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: { ...TODO_MOCK_DATA, completed: !TODO_MOCK_DATA.completed },
         message: `Item with id ${TODO_MOCK_DATA.id} was updated successfully`,
         status: 200
@@ -499,9 +505,11 @@ describe('Todo controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(writeErrorToFileSpy).toBeCalledWith('Error: Error occurred!');
-      expect(nextMock).toBeCalledWith(error);
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
+        'Error: Error occurred!'
+      );
+      expect(nextMock).toHaveBeenCalledWith(error);
     });
   });
 });

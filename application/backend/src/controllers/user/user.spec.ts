@@ -28,8 +28,8 @@ describe('User controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         `Error: User with ${USER_MOCK_DATA.id} was not found`
       );
     });
@@ -45,9 +45,9 @@ describe('User controller', () => {
       );
 
       const { password: pass, ...rest } = USER_MOCK_DATA;
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: rest,
         message: 'Fetch user successful',
         status: 200
@@ -67,9 +67,11 @@ describe('User controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(writeErrorToFileSpy).toBeCalledWith('Error: Error occurred!');
-      expect(nextMock).toBeCalledWith(error);
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
+        'Error: Error occurred!'
+      );
+      expect(nextMock).toHaveBeenCalledWith(error);
     });
   });
 
@@ -84,8 +86,8 @@ describe('User controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         `Error: User with ${USER_MOCK_DATA.id} was not found`
       );
     });
@@ -100,8 +102,8 @@ describe('User controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: First name must be provided!'
       );
     });
@@ -119,8 +121,8 @@ describe('User controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Last name must be provided!'
       );
     });
@@ -138,8 +140,8 @@ describe('User controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Age must be provided!'
       );
     });
@@ -165,9 +167,9 @@ describe('User controller', () => {
       );
 
       const { password, ...rest } = USER_MOCK_DATA;
-      expect(readFromFileSpy).toBeCalledTimes(2);
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(readFromFileSpy).toHaveBeenCalledTimes(2);
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: {
           ...rest,
           isProfileUpdated: true,
@@ -196,9 +198,11 @@ describe('User controller', () => {
         nextMock
       );
 
-      expect(readFromFileSpy).toBeCalledTimes(1);
-      expect(writeErrorToFileSpy).toBeCalledWith('Error: Error occurred!');
-      expect(nextMock).toBeCalledWith(error);
+      expect(readFromFileSpy).toHaveBeenCalledTimes(1);
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
+        'Error: Error occurred!'
+      );
+      expect(nextMock).toHaveBeenCalledWith(error);
     });
   });
 });

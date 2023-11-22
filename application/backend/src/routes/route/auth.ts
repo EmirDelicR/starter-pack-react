@@ -3,24 +3,16 @@ import { Router } from 'express';
 import { authController } from 'src/controllers/auth';
 
 const authRouter = Router();
-/**
- * POST /login
- */
+/** POST /login */
 authRouter.post('/login', authController.signIn);
 
-/**
- * POST /login
- */
+/** POST /autoLogin */
 authRouter.post('/autoLogin', authController.autoSignIn);
 
-/**
- * POST /register
- */
+/** POST /register */
 authRouter.post('/register', authController.signUp);
 
-/**
- * GET /refresh
- */
+/** GET /refresh */
 authRouter.get('/refresh', authController.updateToken);
 
 export { authRouter };

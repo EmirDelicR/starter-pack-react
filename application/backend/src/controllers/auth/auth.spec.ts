@@ -47,7 +47,7 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Email must be provided!'
       );
     });
@@ -61,7 +61,7 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Email address must be valid!'
       );
     });
@@ -79,7 +79,9 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith('Error: No user found in DB!');
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
+        'Error: No user found in DB!'
+      );
     });
 
     it('should return status 400 if password is not provided', async () => {
@@ -94,7 +96,7 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Password must be provided!'
       );
     });
@@ -112,7 +114,9 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith('Error: Invalid password!');
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
+        'Error: Invalid password!'
+      );
     });
 
     it('should return status 200 if user is sign in', async () => {
@@ -130,14 +134,14 @@ describe('Auth controller', () => {
       );
 
       const { password, ...rest } = USER_MOCK_DATA;
-      expect(jwtSignSpy).toBeCalledTimes(2);
-      expect(responseMock.cookie).toBeCalledWith(
+      expect(jwtSignSpy).toHaveBeenCalledTimes(2);
+      expect(responseMock.cookie).toHaveBeenCalledWith(
         'jwt',
         'signed-token',
         COOKIE_OPTIONS
       );
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: {
           ...rest,
           isLoggedIn: true,
@@ -164,7 +168,7 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Token expired, please login again'
       );
     });
@@ -184,7 +188,7 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Email must be provided!'
       );
     });
@@ -204,7 +208,7 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Email address must be valid!'
       );
     });
@@ -226,7 +230,9 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith('Error: No user found in DB!');
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
+        'Error: No user found in DB!'
+      );
     });
 
     it('should return status 400 if password is not provided', async () => {
@@ -246,7 +252,7 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Password must be provided!'
       );
     });
@@ -261,7 +267,9 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith('Error: Invalid password!');
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
+        'Error: Invalid password!'
+      );
     });
 
     it('should return status 200 if user is sign in', async () => {
@@ -276,14 +284,14 @@ describe('Auth controller', () => {
       );
 
       const { password, ...rest } = USER_MOCK_DATA;
-      expect(jwtSignSpy).toBeCalledTimes(2);
-      expect(responseMock.cookie).toBeCalledWith(
+      expect(jwtSignSpy).toHaveBeenCalledTimes(2);
+      expect(responseMock.cookie).toHaveBeenCalledWith(
         'jwt',
         'signed-token',
         COOKIE_OPTIONS
       );
-      expect(responseMock.status).toBeCalledWith(200);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(responseMock.status).toHaveBeenCalledWith(200);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: {
           ...rest,
           isLoggedIn: true,
@@ -305,7 +313,7 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Email must be provided!'
       );
     });
@@ -319,7 +327,7 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Email address must be valid!'
       );
     });
@@ -333,7 +341,7 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Password must be provided!'
       );
     });
@@ -347,7 +355,7 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: Password is not strong enough!(min 8 char | number | special char)'
       );
     });
@@ -365,7 +373,7 @@ describe('Auth controller', () => {
         nextMock
       );
 
-      expect(writeErrorToFileSpy).toBeCalledWith(
+      expect(writeErrorToFileSpy).toHaveBeenCalledWith(
         'Error: User already exist. Please login!'
       );
     });
@@ -384,10 +392,10 @@ describe('Auth controller', () => {
       );
 
       const { password, ...rest } = USER_MOCK_DATA;
-      expect(argon2HashSpy).toBeCalledTimes(1);
-      expect(jwtSignSpy).toBeCalledTimes(2);
-      expect(responseMock.status).toBeCalledWith(201);
-      expect(responseMock.status().json).toBeCalledWith({
+      expect(argon2HashSpy).toHaveBeenCalledTimes(1);
+      expect(jwtSignSpy).toHaveBeenCalledTimes(2);
+      expect(responseMock.status).toHaveBeenCalledWith(201);
+      expect(responseMock.status().json).toHaveBeenCalledWith({
         data: {
           ...rest,
           isLoggedIn: true,
