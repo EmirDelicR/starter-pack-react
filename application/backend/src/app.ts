@@ -18,8 +18,8 @@ if (process.env.NODE_ENV !== 'production') {
   dotenv.config({ debug: true });
 }
 
-const PORT: number = parseInt(process.env.PORT!, 10) || 3000;
-const HOST: string = process.env.HOST!;
+const PORT: number = parseInt(process.env.PORT!, 10) || 3100;
+const HOST: string = process.env.HOST! || 'localhost';
 
 const app = express();
 
