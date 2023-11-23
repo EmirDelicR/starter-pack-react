@@ -19,13 +19,17 @@ TODO @ed
 
 [Path config](#path-config)
 
+[Nodemon](#nodemon)
+
 [ES linting](#es-linting)
+
+[Unit tests](#unit-tests)
+
+[Express](#express)
 
 [Swagger](#swagger)
 
 [Sentry](#sentry)
-
-[Unit tests](#unit-tests)
 
 [GIT pipeline](#git-pipeline)
 
@@ -69,9 +73,17 @@ npm run test
 npm run lint
 ```
 
+**Create logs file**
+
+In source folder create logs folder : src/logs or run command
+
+```console
+mkdir src/logs
+```
+
 **Dump data**
 
-Navigate in terminal to backend folder and execute.
+Navigate in terminal to backend/scripts folder and execute.
 
 ```console
 ./dump_data.sh
@@ -87,7 +99,7 @@ sudo chmod 777 dump_data.sh
 
 **Populate data**
 
-Navigate in terminal to backend folder and execute. This command will give some pre defined data.
+Navigate in terminal to backend/scripts folder and execute. This command will give some pre defined data.
 
 ```console
 ./populate_data.sh
@@ -135,6 +147,7 @@ sudo n stable
 ## Update packages
 
 ```console
+npm outdated
 npx npm-check-updates -u
 ```
 
@@ -142,47 +155,77 @@ npx npm-check-updates -u
 
 ## typescript
 
+**_Type Script Setup_**
+
 ```console
-npm install -D typescript tslint types/express
+npm i -D typescript @types/node ts-node
 ```
 
-In tsconfig.json
+- Add this as script to package.json to avoid instaling typescript globaly
+
+```javascript
+"scripts": {
+    ...
+    "tsc": "tsc"
+}
+```
+
+Now run command
+
+```console
+npm run tsc -- --init
+```
+
+This will generate tsconfig.json file (Options that I use)
 
 ```json
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "commonjs",
     "lib": ["es6"],
+    "module": "commonjs",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"]
+    },
     "sourceMap": true,
     "outDir": "./dist",
-    "rootDir": "src",
-
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
-
-    "moduleResolution": "node",
-    "esModuleInterop": true
+    "skipLibCheck": true
   }
 }
 ```
 
-Add **start** script
+Test if TS is configured correctly. In package.json file add start script. Create file src/app.ts and add some TS code.
 
-```js
-"start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts",
+```javascript
+"scripts": {
+    ...
+    "start": "ts-node src/app.ts"
+}
+```
+
+```console
+npm run start
 ```
 
 [Back to TOP](#documentation)
 
 ## path-config
 
+**_Path Config_**
+
 ```console
-npm install --save-dev tsconfig-paths
+npm i -D tsconfig-paths
 ```
 
-In tsconfig.json
+Update tsconfig.json
 
-```js
+```json
 {
   "compilerOptions": {
     "baseUrl": ".",
@@ -193,80 +236,254 @@ In tsconfig.json
 }
 ```
 
-Add script in package.json
+Update start script to use nodemon
 
 ```js
 "scripts": {
-  "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' -r tsconfig-paths/register src/app.ts",
-},
+    ...
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' -r tsconfig-paths/register src/app.ts"
+}
+```
+
+[Back to TOP](#documentation)
+
+## nodemon
+
+**_Nodemon Setup_**
+
+```console
+npm i -D nodemon
+```
+
+Update start script to use nodemon
+
+```js
+"scripts": {
+    ...
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts"
+}
+```
+
+Run:
+
+```console
+npm run start
+```
+
+You can also create a file nodemon.json and add settings to make start script smaller
+
+```json
+{
+  "watch": ["src"],
+  "ext": "ts",
+  "exec": "ts-node -r tsconfig-paths/register src/app.ts"
+}
+```
+
+```js
+"scripts": {
+    ...
+    "start": "nodemon"
+}
+```
+
+```console
+npm run start
 ```
 
 [Back to TOP](#documentation)
 
 ## es-linting
 
+**_ESLint and Prettier Config_**
+
 [ES Article](https://sourcelevel.io/blog/how-to-setup-eslint-and-prettier-on-node)
+
+you can run this command:
 
 ```console
 npx eslint --init
 ```
 
-#### prettier.config.js
+or do it manualy:
+
+```console
+npm i -D eslint prettier eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-import
+```
+
+Create .eslintrc.json file and past this (this is my settings)
 
 ```json
 {
   "env": {
-    "browser": true,
-    "es2021": true
+    "node": true,
+    "es2021": true,
+    "jest": true
   },
-  "extends": ["prettier", "airbnb-base"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 12,
-    "sourceType": "module"
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "tsconfig.json"
   },
-  "plugins": ["prettier", "@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "prettier", "import"],
   "rules": {
     "prettier/prettier": "error",
-    "import/extensions": [{ "ts": "never" }]
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
+    "no-console": "off",
+    "object-curly-newline": "off",
+    "import/prefer-default-export": "off",
+    "comma-dangle": ["error", "only-multiline"],
+    "no-var": "error",
+    "no-multi-spaces": "error",
+    "space-in-parens": "error",
+    "no-multiple-empty-lines": "error",
+    "prefer-const": "error",
+    "indent": ["error", "tab"],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
   },
   "settings": {
     "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      },
       "node": {
-        "extensions": [".ts"],
-        "paths": ["src"]
+        "extensions": [".js", ".ts"],
+        "moduleDirectory": ["src", "node_modules"]
       }
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts"]
     }
   }
 }
 ```
 
+Add linting script command in package.json
+
+```json
+"scripts": {
+    ...
+    "lint": "eslint '**/*.{ts,tsx}'"
+}
+```
+
+Run:
+
+```console
+npm run lint
+```
+
+#### .prettierrc.json
+
 Add prettier extension for VSCode and install in project
 
 ```console
-npm i --save-dev prettier eslint-config-prettier eslint-plugin-prettier
+npm i --D prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
 Go to VSCode setting search for Default Formatter and add **_ebsenp.prettier-vscode_**
 
-Add prettier.config.js file
+Add .prettierrc.json file
+
+```json
+{
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "endOfLine": "auto",
+  // import order is optional
+  "importOrder": [
+    "^src/interfaces/(.*)$",
+    "^src/controllers",
+    "^src/middleware",
+    "^src/routes",
+    "^src/swagger",
+    "^src/util"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
+```
+
+[Back to TOP](#documentation)
+
+## unit-tests
+
+**_Jest configuration_**
+
+```console
+npm i -D jest @types/jest ts-jest
+```
+
+Initialize jest config file
+
+```console
+npx ts-jest config:init
+```
+
+This will create jest.config.js file
 
 ```js
 module.exports = {
-  tabWidth: 2,
-  semi: true,
-  singleQuote: true,
-  trailingComma: 'es5'
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  // To resolve path from tsconfig.json add
+  moduleNameMapper: {
+    'src/(.*)': '<rootDir>/src/$1'
+  }
 };
+```
+
+Add script to package.json
+
+```json
+"scripts": {
+    ...
+    "test": "jest --watch",
+}
+```
+
+Create file **_someTest.spec.ts_** file
+
+Run:
+
+```console
+npm run test
+```
+
+[Back to TOP](#documentation)
+
+## express
+
+**_Configure server_**
+
+```console
+npm i express dotenv cors helmet morgan cookie-parser
+npm i -D @types/cookie-parser @types/cors @types/express @types/morgan
 ```
 
 [Back to TOP](#documentation)
 
 ## swagger
 
-```console
-npm i swagger-jsdoc swagger-ui-express
+**_Configure API Documentation_**
 
+[Swagger setup autogen](https://blog.stackademic.com/how-to-create-api-documentation-fast-swagger-with-typescript-a5926acbed30)
+[Swagger setup](https://dev.to/desmondsanctity/documenting-nodejs-api-using-swagger-4klp)
+
+```console
+npm i -D swagger-jsdoc swagger-ui-express @types/swagger-ui-express @types/swagger-jsdoc
 ```
 
 #### Add swagger to code
@@ -412,60 +629,6 @@ https://stackoverflow.com/questions/62048610/using-sentry-with-a-custom-error-ha
 https://codeburst.io/sentry-error-reporting-by-example-part-1-999b2df11556
 
 https://docs.bitnami.com/tutorials/build-deploy-monitor-express-application-kubernetes-bitnami-sentry/
-
-[Back to TOP](#documentation)
-
-## unit-tests
-
-```console
-npm install jest --save-dev
-```
-
-```console
-npm i @types/jest ts-jest --save-dev
-```
-
-Initialize jest config file
-
-```console
-npx ts-jest config:init
-```
-
-This will create **_jest.config.js_** file
-
-```js
-module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-  moduleNameMapper: {
-    'src/(.*)': '<rootDir>/src/$1'
-  }
-};
-```
-
-To resolve path from tsconfig.json add
-
-```js
-moduleNameMapper: {
-  'src/(.*)': '<rootDir>/src/$1',
-},
-```
-
-Add to package.json
-
-```js
- "scripts": {
-    "test": "jest --watch",
-  },
-```
-
-Create file **_someTest.spec.ts_** file
-
-Run:
-
-```console
-npm test
-```
 
 [Back to TOP](#documentation)
 
