@@ -1,17 +1,13 @@
 import {
   ISwaggerBodyRequest,
+  ISwaggerParametersRequest,
   ISwaggerResponse,
   ISwaggerRoutes
 } from 'src/interfaces/swagger';
 import { ITodo } from 'src/interfaces/todo';
 
-import {
-  ITEM_ID_PATH_REQ,
-  RESPONSE_200,
-  RESPONSE_404,
-  SCHEMA,
-  USER_ID_PATH_REQ
-} from 'src/swagger/util/constants';
+import { RESPONSE_200, RESPONSE_404, SCHEMA } from 'src/swagger/util/constants';
+import { USER_ID_PATH_REQ } from './user';
 
 const EXAMPLE_ITEM_DATA: ITodo = {
   completed: false,
@@ -37,6 +33,18 @@ const RESPONSE_ITEM_200: ISwaggerResponse = {
       }
     }
   }
+};
+
+const ITEM_ID_PATH_REQ: ISwaggerParametersRequest = {
+  in: 'path',
+  name: 'id',
+  style: 'simple',
+  description: 'Item id',
+  required: true,
+  schema: {
+    type: 'string'
+  },
+  example: 'item-uuid'
 };
 
 const RESPONSE_GET_ITEM_200 = {

@@ -1,32 +1,4 @@
-import {
-  ISchema,
-  ISwaggerParametersRequest,
-  ISwaggerResponse
-} from 'src/interfaces/swagger';
-
-export const USER_ID_PATH_REQ: ISwaggerParametersRequest = {
-  in: 'path',
-  name: 'id',
-  style: 'simple',
-  description: 'User id',
-  required: true,
-  schema: {
-    type: 'string'
-  },
-  example: 'user-uuid'
-};
-
-export const ITEM_ID_PATH_REQ: ISwaggerParametersRequest = {
-  in: 'path',
-  name: 'id',
-  style: 'simple',
-  description: 'Item id',
-  required: true,
-  schema: {
-    type: 'string'
-  },
-  example: 'item-uuid'
-};
+import { ISchema, ISwaggerResponse } from 'src/interfaces/swagger';
 
 export const SCHEMA: ISchema = {
   type: 'object',

@@ -1,16 +1,12 @@
 import {
   ISwaggerBodyRequest,
+  ISwaggerParametersRequest,
   ISwaggerResponse,
   ISwaggerRoutes
 } from 'src/interfaces/swagger';
 import { IUser } from 'src/interfaces/user';
 
-import {
-  RESPONSE_404,
-  RESPONSE_200,
-  USER_ID_PATH_REQ,
-  SCHEMA
-} from 'src/swagger/util/constants';
+import { RESPONSE_404, RESPONSE_200, SCHEMA } from 'src/swagger/util/constants';
 
 export const EXAMPLE_USER_DATA: Omit<IUser, 'password'> = {
   age: '12',
@@ -43,6 +39,18 @@ export const RESPONSE_USER_200: ISwaggerResponse = {
       }
     }
   }
+};
+
+export const USER_ID_PATH_REQ: ISwaggerParametersRequest = {
+  in: 'path',
+  name: 'id',
+  style: 'simple',
+  description: 'User id',
+  required: true,
+  schema: {
+    type: 'string'
+  },
+  example: 'user-uuid'
 };
 
 const BODY_REQUEST: ISwaggerBodyRequest = {
