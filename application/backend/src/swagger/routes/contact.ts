@@ -1,10 +1,37 @@
-import { ISwaggerBodyRequest, ISwaggerRoutes } from 'src/interfaces/swagger';
-
+import { IMessage } from 'src/interfaces/message';
 import {
-  RESPONSE_200,
-  RESPONSE_400,
-  RESPONSE_GET_EMAIL_200
-} from 'src/swagger/util/constants';
+  ISwaggerBodyRequest,
+  ISwaggerResponse,
+  ISwaggerRoutes
+} from 'src/interfaces/swagger';
+
+import { RESPONSE_200, RESPONSE_400, SCHEMA } from 'src/swagger/util/constants';
+
+const EXAMPLE_EMAIL_DATA: IMessage = {
+  date: new Date().toLocaleString(),
+  from: 'john@doe.com',
+  id: 'uuid',
+  message: 'User email message',
+  previewUrl: 'url/to/mail/preview'
+};
+
+const RESPONSE_GET_EMAIL_200: ISwaggerResponse = {
+  ...RESPONSE_200,
+  content: {
+    'application/json': {
+      schema: {
+        ...SCHEMA,
+        properties: {
+          ...SCHEMA.properties,
+          data: {
+            ...SCHEMA.properties.data,
+            example: [EXAMPLE_EMAIL_DATA]
+          }
+        }
+      }
+    }
+  }
+};
 
 const BODY_REQUEST: ISwaggerBodyRequest = {
   description: 'Contact form parameters',

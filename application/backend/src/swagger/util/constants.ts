@@ -1,4 +1,3 @@
-import { IMessage } from 'src/interfaces/message';
 import {
   ISchema,
   ISwaggerParametersRequest,
@@ -28,14 +27,6 @@ export const EXAMPLE_ITEM_DATA: ITodo = {
   id: 'uuid',
   title: 'Todo title',
   userId: 'user-uuid'
-};
-
-export const EXAMPLE_EMAIL_DATA: IMessage = {
-  date: new Date().toLocaleString(),
-  from: 'john@doe.com',
-  id: 'uuid',
-  message: 'User email message',
-  previewUrl: 'url/to/mail/preview'
 };
 
 export const USER_ID_PATH_REQ: ISwaggerParametersRequest = {
@@ -121,24 +112,6 @@ export const RESPONSE_ITEM_200: ISwaggerResponse = {
           data: {
             ...SCHEMA.properties.data,
             example: EXAMPLE_ITEM_DATA
-          }
-        }
-      }
-    }
-  }
-};
-
-export const RESPONSE_GET_EMAIL_200: ISwaggerResponse = {
-  ...RESPONSE_200,
-  content: {
-    'application/json': {
-      schema: {
-        ...SCHEMA,
-        properties: {
-          ...SCHEMA.properties,
-          data: {
-            ...SCHEMA.properties.data,
-            example: [EXAMPLE_EMAIL_DATA]
           }
         }
       }
