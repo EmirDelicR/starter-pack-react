@@ -1,13 +1,8 @@
 TODO @ed
 
-- update readme.md file
 - update swagger and swager function
-- update script to do all automaticly
-- make a script to create a logs folder
 - update Docker file
 - run script in docker file
-- write test for file and upload
-- update rest of the test
 
 ## documentation
 
