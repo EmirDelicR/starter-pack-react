@@ -3,15 +3,6 @@ import {
   ISwaggerParametersRequest,
   ISwaggerResponse
 } from 'src/interfaces/swagger';
-import { ITodo } from 'src/interfaces/todo';
-
-export const EXAMPLE_ITEM_DATA: ITodo = {
-  completed: false,
-  createdAt: new Date(),
-  id: 'uuid',
-  title: 'Todo title',
-  userId: 'user-uuid'
-};
 
 export const USER_ID_PATH_REQ: ISwaggerParametersRequest = {
   in: 'path',
@@ -63,24 +54,6 @@ export const RESPONSE_200: ISwaggerResponse = {
   content: {
     'application/json': {
       schema: SCHEMA
-    }
-  }
-};
-
-export const RESPONSE_ITEM_200: ISwaggerResponse = {
-  ...RESPONSE_200,
-  content: {
-    'application/json': {
-      schema: {
-        ...SCHEMA,
-        properties: {
-          ...SCHEMA.properties,
-          data: {
-            ...SCHEMA.properties.data,
-            example: EXAMPLE_ITEM_DATA
-          }
-        }
-      }
     }
   }
 };
