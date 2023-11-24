@@ -4,22 +4,6 @@ import {
   ISwaggerResponse
 } from 'src/interfaces/swagger';
 import { ITodo } from 'src/interfaces/todo';
-import { IUser } from 'src/interfaces/user';
-
-export const EXAMPLE_USER_DATA: Omit<IUser, 'password'> = {
-  age: '12',
-  avatar: 'base64:image',
-  email: 'test@test.com',
-  firstName: 'John',
-  id: 'some-uuid',
-  isLoggedIn: true,
-  isProfileUpdated: false,
-  isSubscribed: false,
-  lastName: 'Doe',
-  subscriptions: ['news'],
-  token: 'string | null',
-  userName: 'John Doe'
-};
 
 export const EXAMPLE_ITEM_DATA: ITodo = {
   completed: false,
@@ -79,24 +63,6 @@ export const RESPONSE_200: ISwaggerResponse = {
   content: {
     'application/json': {
       schema: SCHEMA
-    }
-  }
-};
-
-export const RESPONSE_USER_200: ISwaggerResponse = {
-  ...RESPONSE_200,
-  content: {
-    'application/json': {
-      schema: {
-        ...SCHEMA,
-        properties: {
-          ...SCHEMA.properties,
-          data: {
-            ...SCHEMA.properties.data,
-            example: EXAMPLE_USER_DATA
-          }
-        }
-      }
     }
   }
 };

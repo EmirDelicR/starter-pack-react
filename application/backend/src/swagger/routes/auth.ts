@@ -1,10 +1,7 @@
 import { ISwaggerBodyRequest, ISwaggerRoutes } from 'src/interfaces/swagger';
 
-import {
-  RESPONSE_400,
-  RESPONSE_404,
-  RESPONSE_USER_200
-} from 'src/swagger/util/constants';
+import { RESPONSE_400, RESPONSE_404 } from 'src/swagger/util/constants';
+import { RESPONSE_USER_200 } from './user';
 
 const BODY_REQUEST: ISwaggerBodyRequest = {
   description: 'User auth parameters',

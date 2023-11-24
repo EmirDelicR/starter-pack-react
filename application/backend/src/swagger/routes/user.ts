@@ -1,10 +1,49 @@
-import { ISwaggerBodyRequest, ISwaggerRoutes } from 'src/interfaces/swagger';
+import {
+  ISwaggerBodyRequest,
+  ISwaggerResponse,
+  ISwaggerRoutes
+} from 'src/interfaces/swagger';
+import { IUser } from 'src/interfaces/user';
 
 import {
   RESPONSE_404,
-  RESPONSE_USER_200,
-  USER_ID_PATH_REQ
+  RESPONSE_200,
+  USER_ID_PATH_REQ,
+  SCHEMA
 } from 'src/swagger/util/constants';
+
+export const EXAMPLE_USER_DATA: Omit<IUser, 'password'> = {
+  age: '12',
+  avatar: 'base64:image',
+  email: 'test@test.com',
+  firstName: 'John',
+  id: 'some-uuid',
+  isLoggedIn: true,
+  isProfileUpdated: false,
+  isSubscribed: false,
+  lastName: 'Doe',
+  subscriptions: ['news'],
+  token: 'string | null',
+  userName: 'John Doe'
+};
+
+export const RESPONSE_USER_200: ISwaggerResponse = {
+  ...RESPONSE_200,
+  content: {
+    'application/json': {
+      schema: {
+        ...SCHEMA,
+        properties: {
+          ...SCHEMA.properties,
+          data: {
+            ...SCHEMA.properties.data,
+            example: EXAMPLE_USER_DATA
+          }
+        }
+      }
+    }
+  }
+};
 
 const BODY_REQUEST: ISwaggerBodyRequest = {
   description: 'User parameters',
