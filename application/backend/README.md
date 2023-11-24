@@ -2,7 +2,7 @@ TODO @ed
 
 - update readme.md file
 - update swagger and swager function
-- update script and move them to folder
+- update script to do all automaticly
 - make a script to create a logs folder
 - update Docker file
 - run script in docker file
