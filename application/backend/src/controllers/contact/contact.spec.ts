@@ -16,6 +16,10 @@ describe('Contact controller', () => {
     sendEmailSpy.mockReset();
   });
 
+  afterAll(() => {
+    jest.restoreAllMocks();
+  });
+
   describe('sendMessage function', () => {
     it('should return status 400 if no email field', async () => {
       const responseMock = generateResponseMock();

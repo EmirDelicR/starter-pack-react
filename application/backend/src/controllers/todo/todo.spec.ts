@@ -17,6 +17,10 @@ describe('Todo controller', () => {
     nextMock.mockReset();
   });
 
+  afterAll(() => {
+    jest.restoreAllMocks();
+  });
+
   describe('getItems function', () => {
     it('should return status 200 if todo list is empty', async () => {
       readFromFileSpy.mockReturnValue([]);

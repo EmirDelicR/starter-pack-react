@@ -37,6 +37,10 @@ describe('Auth controller', () => {
     argon2HashSpy.mockReset().mockResolvedValue('hashed-password');
   });
 
+  afterAll(() => {
+    jest.restoreAllMocks();
+  });
+
   describe('signIn function', () => {
     it('should return status 400 if no email field', async () => {
       const responseMock = generateResponseMock();

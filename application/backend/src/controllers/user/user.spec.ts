@@ -17,6 +17,10 @@ describe('User controller', () => {
     writeErrorToFileSpy.mockReset();
   });
 
+  afterAll(() => {
+    jest.restoreAllMocks();
+  });
+
   describe('getUser function', () => {
     it('should return status 404 if no user in db', async () => {
       readFromFileSpy.mockReturnValue([]);

@@ -22,6 +22,10 @@ describe('DB utils', () => {
     readFromFileSpy.mockReset();
   });
 
+  afterAll(() => {
+    jest.restoreAllMocks();
+  });
+
   describe('getUserTodoItemsFromDb', () => {
     it('should return empty array if no data', () => {
       readFromFileSpy.mockReturnValue([]);
