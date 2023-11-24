@@ -19,7 +19,7 @@ export const createFileStream = (
 export const readFromFile = <T>(directory: string, fileName: string): T[] => {
   const filePath = path.join(__dirname, '..', '..', directory, fileName);
   const rawData = fs.readFileSync(filePath);
-  return JSON.parse(rawData.toString() || '[]');
+  return JSON.parse(rawData?.toString() || '[]');
 };
 
 export const writeToDbFile = (data: string | Object, fileName: string) => {
