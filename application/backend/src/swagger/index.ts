@@ -1,3 +1,4 @@
+import swaggerUi from 'swagger-ui-express';
 import { ISwaggerMainDocument } from 'src/interfaces/swagger';
 
 import { autoLogin, login, register } from 'src/swagger/routes/auth';
@@ -10,10 +11,11 @@ import {
   updateItem
 } from 'src/swagger/routes/todo';
 import { getUser, updateUser } from 'src/swagger/routes/user';
+import { Application } from 'express-serve-static-core';
 
 const { PORT, HOST } = process.env;
 
-export const swaggerDocument: ISwaggerMainDocument = {
+const swaggerDocument: ISwaggerMainDocument = {
   openapi: '3.0.0',
   info: {
     description: 'API Documentation for NodeJS API project',
@@ -95,4 +97,15 @@ export const swaggerDocument: ISwaggerMainDocument = {
       name: 'Todo'
     }
   ]
+};
+
+export const generateSwaggerDocs = (app: Application) => {
+  // Swagger Page
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+  // Documentation in JSON format
+  app.get('/api-docs.json', (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(swaggerDocument);
+  });
 };
