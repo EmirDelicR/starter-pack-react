@@ -14,7 +14,7 @@ import { generateSwaggerDocs } from 'src/swagger';
 
 const registerRoutes = (app: Application) => {
   app.get('/', (_req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'index.html'));
+    res.redirect('/api-docs');
   });
   app.use(authRouter);
   generateSwaggerDocs(app);
