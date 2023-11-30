@@ -1,7 +1,6 @@
 TODO @ed
 
-- update swagger and swager function
-- update Docker file
+- update Docker file to read .env file
 - run script in docker file
 
 ## documentation
