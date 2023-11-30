@@ -1,7 +1,6 @@
 TODO @ed
 
 - update Docker file to read .env file
-- run script in docker file
 
 ## documentation
 
@@ -31,18 +30,6 @@ TODO @ed
 
 #### Run project
 
-**Env setup**
-
-```env
-HOST = localhost
-PORT = 3100
-AUTH_PASSWORD_SALT = 'encription-salt'
-AUTH_JWT_SECRET = 'jwt-secret'
-AUTH_JWT_EXPIRES = '24h'
-AUTH_JWT_REFRESH_SECRET = 'jwt-refresh-secret'
-AUTH_JWT_REFRESH_EXPIRES = '48h'
-```
-
 **Setup data**
 You can run the script in the scripts folder to set up all data that is needed with one command.
 
@@ -65,6 +52,22 @@ npm start
 ```
 
 to start the project again. Or you can do all these steps manually as written below.
+
+**_Do this command before you run docker and modify the .env file with your data._**
+
+**Env setup**
+
+Create .env file in root of the project.
+
+```env
+HOST = localhost
+PORT = 3100
+AUTH_PASSWORD_SALT = 'encription-salt'
+AUTH_JWT_SECRET = 'jwt-secret'
+AUTH_JWT_EXPIRES = '24h'
+AUTH_JWT_REFRESH_SECRET = 'jwt-refresh-secret'
+AUTH_JWT_REFRESH_EXPIRES = '48h'
+```
 
 **Install**
 
