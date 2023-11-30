@@ -43,6 +43,29 @@ AUTH_JWT_REFRESH_SECRET = 'jwt-refresh-secret'
 AUTH_JWT_REFRESH_EXPIRES = '48h'
 ```
 
+**Setup data**
+You can run the script in the scripts folder to set up all data that is needed with one command.
+
+First, you need to add permissions to the folder:
+
+```console
+sudo chmod -R 777 scripts
+```
+
+and then execute
+
+```console
+./scripts/start.sh
+```
+
+This script will create a logs folder for you, dump all data, populate data with backup data, create .env file and add entries, install dependency, and run the project. After you stop the project you can only call
+
+```console
+npm start
+```
+
+to start the project again. Or you can do all these steps manually as written below.
+
 **Install**
 
 ```console
