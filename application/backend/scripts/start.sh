@@ -25,5 +25,17 @@ touch .env && chmod 777 .env
 echo -en "HOST='localhost'\nPORT='3100'\nAUTH_PASSWORD_SALT='encription-salt'\nAUTH_JWT_SECRET='jwt-secret'\nAUTH_JWT_EXPIRES='24h'\nAUTH_JWT_REFRESH_SECRET='jwt-refresh-secret'\nAUTH_JWT_REFRESH_EXPIRES='48h'" > .env 
 echo -e "${GREEN} Successfuly added data to .env file."
 
-echo -e "${BLUE}5. Installing and starting project."
-npm i && npm start
+echo -e "${BLUE}5. Installing dependencies."
+npm i 
+echo -e "${GREEN} Successfuly installed dependencies."
+
+echo -e "${BLUE}Do you want to start the project?${WHITE}"
+read -e -p "[yes/no]: " -i "no" start_project
+
+if [ "$start_project" == "yes" ]; then
+    npm start
+elif [ "$start_project" == "no" ]; then
+    echo -e "${WHITE}If you want to start project please run ${GREEN}npm start${WHITE}!"  
+else 
+    echo -e "${WHITE}Comand aborted! Try to type ${RED}[yes/no] ${WHITE}next time."
+fi
