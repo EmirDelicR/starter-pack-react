@@ -11,12 +11,11 @@ sudo docker build --tag ${IMAGE_TAG}:${IMAGE_TAG} .
 # List docker images
 sudo docker images
 
-# List containers
-sudo docker ps -a
-
 # Run docker image
 sudo docker run -p ${env_port}:${env_port} ${IMAGE_TAG}:${IMAGE_TAG}
 
+# List containers
+# sudo docker ps -a
 
 # Stop container
 # sudo docker stop c16349310ef7
