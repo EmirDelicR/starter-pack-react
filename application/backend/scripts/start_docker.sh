@@ -12,7 +12,7 @@ sudo docker build --tag ${IMAGE_TAG}:${IMAGE_TAG} .
 sudo docker images
 
 # Run docker image
-sudo docker run -p ${env_port}:${env_port} ${IMAGE_TAG}:${IMAGE_TAG}
+sudo docker run -p ${env_port}:80 ${IMAGE_TAG}:${IMAGE_TAG} 
 
 # List containers
 # sudo docker ps -a
