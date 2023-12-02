@@ -1,7 +1,3 @@
-TODO @ed
-
-- update Docker file to read .env file
-
 ## documentation
 
 [General](#general)
@@ -54,6 +50,24 @@ npm start
 to start the project again. Or you can do all these steps manually as written below.
 
 **_Do this command before you run docker and modify the .env file with your data._**
+
+To use docker you need to install docker on your machine and run:
+
+```console
+./scripts/start_docker.sh
+```
+
+To stop container and (optional) remove container and image run
+
+```console
+./scripts/stop_container.sh
+```
+
+If you want to ommit sudo when calling docker command use this comand and restart your PC.
+
+```console
+sudo usermod -aG docker $USER
+```
 
 **Env setup**
 

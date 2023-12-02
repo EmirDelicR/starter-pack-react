@@ -2,8 +2,8 @@
 
 IMAGE_TAG='app-backend'
 
-env_port=$(cat .env | grep PORT | cut -d = -f 2 | tr -d "'")
-env_host=$(cat .env | grep HOST | cut -d = -f 2 | tr -d "'")
+# env_port=$(cat .env | grep PORT | cut -d = -f 2 | tr -d "'")
+# env_host=$(cat .env | grep HOST | cut -d = -f 2 | tr -d "'")
 
 # Build docker image with name and tag
 sudo docker build --tag ${IMAGE_TAG}:${IMAGE_TAG} .
@@ -12,7 +12,9 @@ sudo docker build --tag ${IMAGE_TAG}:${IMAGE_TAG} .
 sudo docker images
 
 # Run docker image
-sudo docker run -p ${env_port}:80 ${IMAGE_TAG}:${IMAGE_TAG} 
+# docker -p <host-machine-port>:<docker-port> image
+# sudo docker run -p 3101:80 ${IMAGE_TAG}:${IMAGE_TAG} 
+sudo docker run --net=host ${IMAGE_TAG}:${IMAGE_TAG} 
 
 # List containers
 # sudo docker ps -a
