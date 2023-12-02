@@ -2,6 +2,21 @@
 
 #### Run commands
 
+## node
+
+```console
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+```
+
+## Update packages
+
+```console
+npm outdated
+npx npm-check-updates -u
+```
+
 _Start project:_
 
 ```console

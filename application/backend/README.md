@@ -57,13 +57,13 @@ To use docker you need to install docker on your machine and run:
 ./scripts/start_docker.sh
 ```
 
-To stop container and (optional) remove container and image run
+To stop the container and (optional) remove the container and image run
 
 ```console
 ./scripts/stop_container.sh
 ```
 
-If you want to ommit sudo when calling docker command use this comand and restart your PC.
+If you want to omit sudo when calling the docker command use this command and restart your PC.
 
 ```console
 sudo usermod -aG docker $USER
@@ -71,7 +71,7 @@ sudo usermod -aG docker $USER
 
 **Env setup**
 
-Create .env file in root of the project.
+Create .env file in the root of the project.
 
 ```env
 HOST = localhost
@@ -109,7 +109,7 @@ npm run lint
 
 **Create logs file**
 
-In source folder create logs folder : src/logs or run command
+In the source folder create a logs folder: src/logs or run the command:
 
 ```console
 mkdir src/logs
@@ -117,7 +117,7 @@ mkdir src/logs
 
 **Dump data**
 
-Navigate in terminal to backend/scripts folder and execute.
+Navigate in the terminal to the backend/scripts folder and execute:
 
 ```console
 ./dump_data.sh
@@ -125,7 +125,7 @@ Navigate in terminal to backend/scripts folder and execute.
 
 Follow instructions.
 
-If you have issue with permissions run:
+If you have an issue with permissions run:
 
 ```console
 sudo chmod 777 dump_data.sh
@@ -133,13 +133,13 @@ sudo chmod 777 dump_data.sh
 
 **Populate data**
 
-Navigate in terminal to backend/scripts folder and execute. This command will give some pre defined data.
+Navigate in the terminal to the backend/scripts folder and execute. This command will give some pre-defined data.
 
 ```console
 ./populate_data.sh
 ```
 
-If you have issue with permissions run:
+If you have an issue with permissions run:
 
 ```console
 sudo chmod 777 populate_data.sh
@@ -147,7 +147,7 @@ sudo chmod 777 populate_data.sh
 
 **User**
 
-If you have executed
+If you have executed:
 
 ```console
 ./populate_data.sh
@@ -168,7 +168,7 @@ or you can use backend-api.postman_collection.json in Postman
 
 First import file in Postman. Then start the backend.
 
-After that go to Auth folder and execute register route. You will get response and from this response if is successful copy token. Click on backend-api root folder and in tab variables update token. Do the same for user id.
+After that go to the Auth folder and execute the register route. You will get a response and from this response if is successful copy the token. Click on backend-api root folder and in tab variables update token. Do the same for user id.
 
 ## node
 
@@ -195,12 +195,12 @@ npx npm-check-updates -u
 npm i -D typescript @types/node ts-node
 ```
 
-- Add this as script to package.json to avoid instaling typescript globaly
+- Add this as a script to package.json to avoid installing typescript globally.
 
 ```javascript
 "scripts": {
-    ...
-    "tsc": "tsc"
+  ...
+  "tsc": "tsc"
 }
 ```
 
@@ -238,8 +238,8 @@ Test if TS is configured correctly. In package.json file add start script. Creat
 
 ```javascript
 "scripts": {
-    ...
-    "start": "ts-node src/app.ts"
+  ...
+  "start": "ts-node src/app.ts"
 }
 ```
 
@@ -270,12 +270,12 @@ Update tsconfig.json
 }
 ```
 
-Update start script to use nodemon
+Update the start script to use paths
 
 ```js
 "scripts": {
-    ...
-    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' -r tsconfig-paths/register src/app.ts"
+  ...
+  "start": "ts-node -r tsconfig-paths/register src/app.ts"
 }
 ```
 
@@ -289,12 +289,12 @@ Update start script to use nodemon
 npm i -D nodemon
 ```
 
-Update start script to use nodemon
+Update the start script to use nodemon
 
 ```js
 "scripts": {
-    ...
-    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts"
+  ...
+  "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' -r tsconfig-paths/register src/app.ts"
 }
 ```
 
@@ -304,7 +304,7 @@ Run:
 npm run start
 ```
 
-You can also create a file nodemon.json and add settings to make start script smaller
+You can also create a file nodemon.json and add settings to make the start script smaller.
 
 ```json
 {
@@ -316,8 +316,8 @@ You can also create a file nodemon.json and add settings to make start script sm
 
 ```js
 "scripts": {
-    ...
-    "start": "nodemon"
+  ...
+  "start": "nodemon"
 }
 ```
 
@@ -403,10 +403,10 @@ Create .eslintrc.json file and past this (this is my settings)
 
 Add linting script command in package.json
 
-```json
+```js
 "scripts": {
-    ...
-    "lint": "eslint '**/*.{ts,tsx}'"
+  ...
+  "lint": "eslint '**/*.{ts,tsx}'"
 }
 ```
 
@@ -418,13 +418,13 @@ npm run lint
 
 #### .prettierrc.json
 
-Add prettier extension for VSCode and install in project
+Add a prettier extension for VSCode and install in the project.
 
 ```console
 npm i --D prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
-Go to VSCode setting search for Default Formatter and add **_ebsenp.prettier-vscode_**
+Go to the VSCode setting search for Default Formatter and add **_ebsenp.prettier-vscode_**
 
 Add .prettierrc.json file
 
@@ -479,16 +479,16 @@ module.exports = {
 };
 ```
 
-Add script to package.json
+Add script to the package.json
 
-```json
+```js
 "scripts": {
-    ...
-    "test": "jest --watch",
+  ...
+  "test": "jest --watch",
 }
 ```
 
-Create file **_someTest.spec.ts_** file
+Create **_someTest.spec.ts_** file
 
 Run:
 
@@ -566,7 +566,7 @@ export const swaggerDocument = {
 };
 ```
 
-Add document for specific route
+Add document for a specific route.
 
 ```js
 const loginRequest = {
@@ -624,7 +624,7 @@ export const login = {
 };
 ```
 
-Add document of specific route to main document
+Add document of the specific route to the main document
 
 ```js
 import { login } from './routes/auth';
