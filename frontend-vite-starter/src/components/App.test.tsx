@@ -7,7 +7,7 @@ describe('Simple working test', () => {
   it('the title is visible', () => {
     render(<App />);
 
-    const welcomeText = screen.getByText('Setup ne project');
+    const welcomeText = screen.getByText('Setup new project');
 
     screen.debug(welcomeText);
 

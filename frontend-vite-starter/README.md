@@ -1,4 +1,4 @@
-## Starter pack with 
+## Starter pack with
 
 - Vite
 - React v18.2
@@ -6,15 +6,92 @@
 - Prettier
 - RTL -React testing library
 
-## React app with Vite
+## documentation
+
+[General](#general)
+
+[Node upgrade](#node)
+
+[SCSS](#scss)
+
+[Path config](#path-config)
+
+[Unit tests](#unit-tests)
+
+[ES linting](#es-linting)
+
+[ES linting](#prettier)
+
+## general
+
+#### React app with Vite
 
 [Vite Documentation](https://vitejs.dev/guide/)
 
 ```code
-npm create vite@latest my-vue-app --template react-ts
+npm create vite@latest my-react-app
 ```
 
-## Setup path resolver
+Chose `react` and `typescript`.
+
+#### Run project
+
+_Install:_
+
+```console
+npm i
+```
+
+_Start project:_
+
+```console
+npm run dev
+```
+
+_Test project:_
+
+```console
+npm run test
+```
+
+_Lint project:_
+
+```console
+npm run lint
+```
+
+[Back to TOP](#documentation)
+
+## node
+
+#### Update Node to latest version
+
+```console
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+```
+
+#### Update packages to latest version
+
+```console
+npm outdated
+npx npm-check-updates -u
+```
+
+[Back to TOP](#documentation)
+
+## scss
+
+```code
+npm i -D sass
+```
+
+Now change all `.css` files to `.scss` and start project.
+
+[Back to TOP](#documentation)
+
+## path-config
 
 in `vite.config.ts` add:
 
@@ -22,23 +99,40 @@ in `vite.config.ts` add:
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    alias: [{ find: '@', replacement: '/src' }],
-  },
+    alias: [{ find: '@', replacement: '/src' }]
+  }
 });
 ```
 
-## Add scss
+in `tsconfig.json` add:
 
-```code
-npm i -D sass
+```js
+{
+  "compilerOptions": {
+    ...,
+    /* Path - this part here */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
 ```
 
-## Setup RTL
+Reload VSCode -> press `Strg + P` and type `> rel` use `Developer: Reload Window`
+
+[Back to TOP](#documentation)
+
+## unit-tests
+
+**_Jest and Vitest configuration_**
 
 [RTL Documentation](https://testing-library.com/docs/react-testing-library/setup)
 
 ```code
-npm i -D @testing-library/jest-dom @testing-library/react @testing-library/react-hooks @testing-library/user-event jsdom vitest
+npm i -D @testing-library/jest-dom @testing-library/react @testing-library/user-event jsdom vitest
 ```
 
 Add `setupTests.ts` to root of the project! and in that file add
@@ -47,7 +141,7 @@ Add `setupTests.ts` to root of the project! and in that file add
 import '@testing-library/jest-dom';
 ```
 
-In vite.config.ts add
+In `vite.config.ts` add:
 
 ```js
 /// <reference types="vitest" />
@@ -61,9 +155,9 @@ export default defineConfig({
 });
 ```
 
-`/// <reference types="vitest" />` This part is only needed if you use TS
+`/// <reference types="vitest" />` This part is only needed if you use TypeScript
 
-Add script to package.json
+Add script to `package.json`:
 
 ```js
 "scripts": {
@@ -73,7 +167,70 @@ Add script to package.json
 }
 ```
 
-## Add ES lint
+Create `[fileName].test.[tsx/ts]` and add:
+
+```js
+describe('Simple working test', () => {
+  it('should ...', () => {
+    expect(true).toEqual(true);
+  });
+});
+```
+
+Run test:
+
+```console
+npm run test
+```
+
+[Back to TOP](#documentation)
+
+## es-linting
+
+If you used command:
+
+```code
+npm create vite@latest my-react-app
+```
+
+this will create file `.eslint.cjs` but you can change that to `.eslintrc` and use config.
+
+You can use basic presets:
+
+```json
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "ignorePatterns": ["dist", ".eslintrc"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
+    "no-console": "off",
+    "object-curly-newline": "off",
+    "import/prefer-default-export": "off",
+    "comma-dangle": ["error", "only-multiline"],
+    "@typescript-eslint/no-non-null-assertion": "off"
+  }
+}
+```
+
+Or you can manually setup all by fallowing this links:
 
 [Vite Plugins](https://vitejs.dev/guide/api-plugin.html#rollup-plugin-compatibility)
 
@@ -85,37 +242,11 @@ Add script to package.json
 npx eslint --init
 ```
 
-#### prettier.config.js
+[Back to TOP](#documentation)
 
-```json
-{
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": ["prettier", "airbnb-base"],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "plugins": ["prettier", "@typescript-eslint"],
-  "rules": {
-    "prettier/prettier": "error",
-    "import/extensions": [{ "ts": "never" }]
-  },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".ts"],
-        "paths": ["src"]
-      }
-    }
-  }
-}
-```
+## prettier
 
-Add prettier extension for VSCode and install in project
+Add prettier extension for VSCode and install in project:
 
 ```console
 npm i -D prettier eslint-config-prettier eslint-plugin-prettier
@@ -123,13 +254,41 @@ npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 
 Go to VSCode setting search for Default Formatter and add **_ebsenp.prettier-vscode_**
 
-Add prettier.config.js file
+Add `.prettierrc` file
 
-```js
-module.exports = {
-  tabWidth: 2,
-  semi: true,
-  singleQuote: true,
-  trailingComma: 'es5',
-};
+```json
+{
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "endOfLine": "auto",
+  "importOrder": ["^@/components", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
 ```
+
+Update `.eslintrc`:
+
+```json
+{
+  "extends": [
+    ...,
+    // Add this part here
+    "prettier"
+  ],
+  // Add this part here
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    ...,
+    // Add this part here
+    "prettier/prettier": "error",
+  }
+}
+```
+
+And you have project setup with `Vite`, `TypeScript`, `ESLint`, `Prettier` and `Vitest`.
+
+[Back to TOP](#documentation)

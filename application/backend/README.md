@@ -339,7 +339,7 @@ you can run this command:
 npx eslint --init
 ```
 
-or do it manualy:
+or do it manually:
 
 ```console
 npm i -D eslint prettier eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-import
