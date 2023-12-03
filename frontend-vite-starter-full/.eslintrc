@@ -2,16 +2,20 @@
   "env": {
     "browser": true,
     "es2021": true,
-        "jest": true,
+    "jest": true,
     "cypress/globals": true
   },
   "extends": [
-   "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/jsx-runtime",
+    "eslint-config-prettier",
     "prettier"
   ],
-   "ignorePatterns": ["dist", ".eslintrc"],
+  "ignorePatterns": ["dist", ".eslintrc"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
