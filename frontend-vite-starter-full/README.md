@@ -193,6 +193,8 @@ npm run test
 
 ## es-linting
 
+Ultimately, we will configure VSCode to use ESLint and Prettier to find problems and format our code, respectively. If you don't have the extensions installed yet, install them: [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+
 If you used command:
 
 ```code
@@ -211,8 +213,12 @@ You can use basic presets:
   },
   "extends": [
     "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended"
+    "plugin:react/jsx-runtime",
+    "eslint-config-prettier"
   ],
   "ignorePatterns": ["dist", ".eslintrc"],
   "parser": "@typescript-eslint/parser",
@@ -298,6 +304,7 @@ Update `.eslintrc`:
 And you have project setup with `Vite`, `TypeScript`, `ESLint`, `Prettier` and `Vitest`.
 
 [Back to TOP](#documentation)
+
 
 ## cypress
 

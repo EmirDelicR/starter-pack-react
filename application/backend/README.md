@@ -331,6 +331,8 @@ npm run start
 
 **_ESLint and Prettier Config_**
 
+Ultimately, we will configure VSCode to use ESLint and Prettier to find problems and format our code, respectively. If you don't have the extensions installed yet, install them: [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+
 [ES Article](https://sourcelevel.io/blog/how-to-setup-eslint-and-prettier-on-node)
 
 you can run this command:
