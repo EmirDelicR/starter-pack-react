@@ -304,7 +304,7 @@ And you have project setup with `Vite`, `TypeScript`, `ESLint`, `Prettier` and `
 [Documentation](https://testing-library.com/docs/cypress-testing-library/intro/)
 
 ```code
-npm install --D cypress @testing-library/cypress eslint-plugin-cypress
+npm install -D cypress @testing-library/cypress eslint-plugin-cypress
 ```
 
 ```js

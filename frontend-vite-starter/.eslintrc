@@ -6,8 +6,12 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/jsx-runtime",
+    "eslint-config-prettier",
     "prettier"
   ],
   "ignorePatterns": ["dist", ".eslintrc"],
@@ -28,14 +32,13 @@
     "import/prefer-default-export": "off",
     "comma-dangle": ["error", "only-multiline"],
     "@typescript-eslint/no-non-null-assertion": "off",
-    "prettier/prettier": "error",
     "no-var": "error",
     "no-multi-spaces": "error",
     "space-in-parens": "error",
     "no-multiple-empty-lines": "error",
     "prefer-const": "error",
-    "indent": ["error", "tab"],
     "linebreak-style": ["error", "unix"],
+    "indent": "off",
     "quotes": ["error", "single"],
     "semi": ["error", "always"]
   }
