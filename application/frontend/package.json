@@ -19,7 +19,7 @@
     "cypress:open": "cypress open --e2e"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.9.3",
+    "@reduxjs/toolkit": "^1.9.7",
     "@tanstack/react-table": "^8.8.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
