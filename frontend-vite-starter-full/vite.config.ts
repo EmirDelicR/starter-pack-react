@@ -13,7 +13,6 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './setupTests.ts',
     css: {
-      include: /.scss+/,
       modules: {
         classNameStrategy: 'non-scoped'
       }

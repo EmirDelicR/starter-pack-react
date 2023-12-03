@@ -4,7 +4,7 @@ import { screen, vi } from 'vitest';
 
 import { Select } from './Select';
 
-describe.skip('<Select/>', () => {
+describe('<Select/>', () => {
   const onChangeHandler = vi.fn();
   const options = [
     { label: 'test 1', value: 'test 1' },
@@ -75,7 +75,7 @@ describe.skip('<Select/>', () => {
 
   it('should remove predefined entry', () => {
     let value = { label: 'test 1', value: 'test 1' };
-    const onChange = jest.fn().mockImplementation((val) => (value = val));
+    const onChange = vi.fn().mockImplementation((val) => (value = val));
 
     const { rerender } = render(
       <Select
@@ -109,7 +109,7 @@ describe.skip('<Select/>', () => {
       { label: 'test 1', value: 'test 1' },
       { label: 'test 2', value: 'test 2' }
     ];
-    const onChange = jest.fn().mockImplementation((val) => (value = val));
+    const onChange = vi.fn().mockImplementation((val) => (value = val));
 
     const { rerender } = render(
       <Select

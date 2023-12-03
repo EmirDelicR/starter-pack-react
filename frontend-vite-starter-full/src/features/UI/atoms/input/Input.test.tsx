@@ -1,6 +1,6 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { screen, vi } from 'vitest';
+import { vi } from 'vitest';
 
 import { Input } from './Input';
 
@@ -10,7 +10,7 @@ describe.skip('<Input/>', () => {
   it('should render Input', () => {
     render(<Input label="test" onChange={onChangeHandler} />);
 
-    const inputWrapper = screen.getByRole('input');
+    const inputWrapper = screen.getByRole('textbox');
 
     expect(inputWrapper.classList.contains('input')).toBe(true);
     expect(inputWrapper.querySelector('.field')).toBeInTheDocument();
