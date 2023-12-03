@@ -1,20 +1,33 @@
-## Project documentation
+## documentation
 
-#### Run commands
+[General](#general)
 
-## node
+[Node upgrade](#node)
+
+[Path config](#path-config)
+
+[Add SCSS](#scss)
+
+[Unit tests](#unit-tests)
+
+[ES linting](#es-linting)
+
+[Express](#express)
+
+[Swagger](#swagger)
+
+[Sentry](#sentry)
+
+[GIT pipeline](#git-pipeline)
+
+## general
+
+#### Run project
+
+_Install:_
 
 ```console
-sudo npm cache clean -f
-sudo npm install -g n
-sudo n stable
-```
-
-## Update packages
-
-```console
-npm outdated
-npx npm-check-updates -u
+npm i
 ```
 
 _Start project:_
@@ -40,6 +53,100 @@ _Open story book:_
 ```console
 npm run storybook
 ```
+
+_Run cypress tests:_
+
+```console
+npm run cypress:open
+```
+
+[Back to TOP](#documentation)
+
+## node
+
+```console
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+```
+
+## Update packages
+
+```console
+npm outdated
+npx npm-check-updates -u
+```
+
+[Back to TOP](#documentation)
+
+## path-config
+
+**_Path Config_**
+
+in vite.config.ts add
+
+```js
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: [{ find: '@', replacement: '/src' }]
+  }
+});
+```
+
+[Back to TOP](#documentation)
+
+## scss
+
+```console
+npm add -D sass
+```
+
+[Back to TOP](#documentation)
+
+## unit-tests
+
+[Vitest migration](https://willcodefor.beer/posts/vitest)
+
+[RTL Documentation](https://testing-library.com/docs/react-testing-library/setup)
+
+```console
+npm i -D @testing-library/jest-dom @testing-library/react @testing-library/react-hooks @testing-library/user-event jsdom vitest
+```
+
+Add `setupTests.ts` to the root of the the project, and in that file add:
+
+```js
+import '@testing-library/jest-dom';
+```
+
+In `vite.config.ts` add:
+
+```js
+/// <reference types="vitest" />
+export default defineConfig({
+  ...,
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './setupTests.ts',
+  },
+});
+```
+
+`/// <reference types="vitest" />` This part is only needed if you use TS
+
+Add script to package.json
+
+```js
+"scripts": {
+  ...
+  "test": "vitest",
+  "coverage": "vitest run --coverage"
+}
+```
+
+[Back to TOP](#documentation)
 
 #### Icons used in project
 
@@ -114,51 +221,6 @@ export default defineConfig({
     alias: [{ find: '@', replacement: '/src' }]
   }
 });
-```
-
-## Add scss
-
-```code
-npm add -D sass
-```
-
-## Setup RTL
-
-[Vitest migration](https://willcodefor.beer/posts/vitest)
-
-[RTL Documentation](https://testing-library.com/docs/react-testing-library/setup)
-
-```code
-npm i -D @testing-library/jest-dom @testing-library/react @testing-library/react-hooks @testing-library/user-event jsdom vitest
-```
-
-Add `setupTests.ts` to root of the project! and in that file add
-
-```js
-import '@testing-library/jest-dom';
-```
-
-In vite.config.ts add
-
-```js
-/// <reference types="vitest" />
-export default defineConfig({
-  ...,
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './setupTests.ts',
-  },
-});
-```
-
-`/// <reference types="vitest" />` This part is only needed if you use TS
-
-Add script to package.json
-
-```code
-"test": "vitest",
-"coverage": "vitest run --coverage"
 ```
 
 ## Add ES lint
