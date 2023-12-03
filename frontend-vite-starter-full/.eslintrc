@@ -13,7 +13,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/jsx-runtime",
     "eslint-config-prettier",
-    "prettier"
+    "plugin:cypress/recommended"
   ],
   "ignorePatterns": ["dist", ".eslintrc"],
   "parser": "@typescript-eslint/parser",
@@ -24,7 +24,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "cypress", "prettier"],
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "import/extensions": 0,
     "import/no-unresolved": 0,
@@ -32,6 +32,16 @@
     "object-curly-newline": "off",
     "import/prefer-default-export": "off",
     "comma-dangle": ["error", "only-multiline"],
-    "@typescript-eslint/no-non-null-assertion": "off"
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "no-var": "error",
+    "no-multi-spaces": "error",
+    "import/no-named-as-default": 0,
+    "space-in-parens": "error",
+    "no-multiple-empty-lines": "error",
+    "prefer-const": "error",
+    "linebreak-style": ["error", "unix"],
+    "indent": "off",
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
   }
 }

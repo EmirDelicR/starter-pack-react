@@ -1,4 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { Button } from './Button';
 
@@ -37,13 +38,13 @@ describe('<Button/>', () => {
     expect(button.classList.contains('large')).toBe(true);
   });
 
-  it('should call custom function on click', () => {
+  it('should call custom function on click', async () => {
     const customHandler = jest.fn();
     render(<Button onClickHandler={customHandler}>Test</Button>);
 
     const button = screen.getByRole('button');
 
-    fireEvent.click(button);
+    await userEvent.click(button);
 
     expect(customHandler).toBeCalledTimes(1);
   });
