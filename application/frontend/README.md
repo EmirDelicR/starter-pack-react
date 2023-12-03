@@ -12,13 +12,7 @@
 
 [ES linting](#es-linting)
 
-[Express](#express)
-
-[Swagger](#swagger)
-
-[Sentry](#sentry)
-
-[GIT pipeline](#git-pipeline)
+[Prettier](#prettier)
 
 ## general
 
@@ -99,7 +93,7 @@ export default defineConfig({
 ## scss
 
 ```console
-npm add -D sass
+npm i -D sass
 ```
 
 [Back to TOP](#documentation)
@@ -148,91 +142,16 @@ Add script to package.json
 
 [Back to TOP](#documentation)
 
-#### Icons used in project
-
-_react-icons_
-
-['React-icons'](https://react-icons.github.io/react-icons/icons?name=ri)
-
-#### Custom Libraries in project
-
-_tenStack Table_
-
-['TenStack Table'](https://tanstack.com/table/v8/docs/guide/installation)
-
-_react hook form_
-
-['React hook form'](https://react-hook-form.com/)
-
-#### Storybook
-
-[Vite Storybook](https://storybook.js.org/docs/react/builders/vite)
-
-[StoryBookV7](https://github.com/storybookjs/storybook/issues/18923)
-
-**Do migration**
-
-```console
-npx sb@next automigrate
-```
-
-#### Adding redux to project
-
-```console
-npm i @reduxjs/toolkit react-redux
-```
-
-#### Adding router to project
-
-['React-router'](https://reactrouter.com/en/v6.3.0/getting-started/concepts)
-
-```console
-npm i react-router-dom
-```
-
-#### SVG-generator
-
-[tablericons](https://tablericons.com/)
-
-[Link-with-tools](https://www.smashingmagazine.com/2021/03/svg-generators/)
-
-## React app with Vite
-
-[Vite Documentation](https://vitejs.dev/guide/)
-
-```code
-npm create vite@latest my-vue-app --template react-ts
-```
-
-## Setup PWA
-
-[Vite PWA](https://vite-pwa-org.netlify.app/guide/register-service-worker.html)
-
-[Official Git Repo](https://github.com/vite-pwa/vite-plugin-pwa)
-
-## Setup path resolver
-
-in vite.config.ts add
-
-```js
-export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: [{ find: '@', replacement: '/src' }]
-  }
-});
-```
-
-## Add ES lint
+## es-linting
 
 [Vite Plugins](https://vitejs.dev/guide/api-plugin.html#rollup-plugin-compatibility)
 
 [Vite all Rollup Plugins](https://vite-rollup-plugins.patak.dev/)
 
-[ES Lint Article](https://www.robinwieruch.de/vite-eslint/)
+[ES Article](https://www.robinwieruch.de/vite-eslint/)
 
 ```console
-npm install vite-plugin-eslint --save-dev
+npm i -D vite-plugin-eslint eslint eslint-config-react-app
 ```
 
 ```js
@@ -247,11 +166,9 @@ export default defineConfig({
 });
 ```
 
-```console
-npm install eslint-config-react-app --save-dev
-```
+[Back to TOP](#documentation)
 
-#### prettier.config.js
+## prettier
 
 ```json
 {
@@ -309,3 +226,67 @@ module.exports = {
   trailingComma: 'es5'
 };
 ```
+
+[Back to TOP](#documentation)
+
+#### Icons used in project
+
+_react-icons_
+
+['React-icons'](https://react-icons.github.io/react-icons/icons?name=ri)
+
+#### Custom Libraries in project
+
+_tenStack Table_
+
+['TenStack Table'](https://tanstack.com/table/v8/docs/guide/installation)
+
+_react hook form_
+
+['React hook form'](https://react-hook-form.com/)
+
+#### Storybook
+
+[Vite Storybook](https://storybook.js.org/docs/react/builders/vite)
+
+[StoryBookV7](https://github.com/storybookjs/storybook/issues/18923)
+
+**Do migration**
+
+```console
+npx sb@next automigrate
+```
+
+#### Adding redux to project
+
+```console
+npm i @reduxjs/toolkit react-redux
+```
+
+#### Adding router to project
+
+['React-router'](https://reactrouter.com/en/v6.3.0/getting-started/concepts)
+
+```console
+npm i react-router-dom
+```
+
+#### SVG-generator
+
+[tablericons](https://tablericons.com/)
+
+[Link-with-tools](https://www.smashingmagazine.com/2021/03/svg-generators/)
+
+## React app with Vite
+
+[Vite Documentation](https://vitejs.dev/guide/)
+
+```code
+npm create vite@latest my-react-app --template react-ts
+```
+
+## Setup PWA
+
+[Vite PWA](https://vite-pwa-org.netlify.app/guide/register-service-worker.html)
+
+[Official Git Repo](https://github.com/vite-pwa/vite-plugin-pwa)

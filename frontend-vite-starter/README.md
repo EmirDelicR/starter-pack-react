@@ -16,7 +16,7 @@ npm create vite@latest my-vue-app --template react-ts
 
 ## Setup path resolver
 
-in vite.config.ts add
+in `vite.config.ts` add:
 
 ```js
 export default defineConfig({
@@ -30,7 +30,7 @@ export default defineConfig({
 ## Add scss
 
 ```code
-npm add -D sass
+npm i -D sass
 ```
 
 ## Setup RTL
@@ -65,9 +65,12 @@ export default defineConfig({
 
 Add script to package.json
 
-```code
-"test": "vitest",
-"coverage": "vitest run --coverage"
+```js
+"scripts": {
+  ...
+  "test": "vitest",
+  "coverage": "vitest run --coverage"
+}
 ```
 
 ## Add ES lint
@@ -115,7 +118,7 @@ npx eslint --init
 Add prettier extension for VSCode and install in project
 
 ```console
-npm i --save-dev prettier eslint-config-prettier eslint-plugin-prettier
+npm i -D prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
 Go to VSCode setting search for Default Formatter and add **_ebsenp.prettier-vscode_**
