@@ -33,6 +33,7 @@
     "comma-dangle": ["error", "only-multiline"],
     "@typescript-eslint/no-non-null-assertion": "off",
     "no-var": "error",
+    "no-unused-vars": "off",
     "no-multi-spaces": "error",
     "space-in-parens": "error",
     "no-multiple-empty-lines": "error",
