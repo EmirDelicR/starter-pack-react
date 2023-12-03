@@ -4,7 +4,7 @@
 - React v18.2
 - ES lint
 - Prettier
-- RTL -React testing library
+- RTL -React testing library with Vitest
 
 ## documentation
 
@@ -20,7 +20,7 @@
 
 [ES linting](#es-linting)
 
-[ES linting](#prettier)
+[Prettier](#prettier)
 
 ## general
 
