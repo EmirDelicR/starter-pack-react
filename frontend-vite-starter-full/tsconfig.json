@@ -28,7 +28,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+
+    /* Types */
+    "types": ["cypress", "@testing-library/cypress"]
   },
   "include": ["src"],
   "exclude": ["node_modules"],

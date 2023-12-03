@@ -24,14 +24,28 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-//
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
+
+// eslint-disable-next-line @typescript-eslint/no-namespace
+declare namespace Cypress {
+  interface Chainable {
+    getByDataTestId(selector: string): Chainable<JQuery<HTMLElement>>;
+    // login(email: string, password: string): Chainable<void>;
+    // drag(
+    //   subject: string,
+    //   options?: Partial<TypeOptions>
+    // ): Chainable<Element>;
+    // dismiss(
+    //   subject: string,
+    //   options?: Partial<TypeOptions>
+    // ): Chainable<Element>;
+    // visit(
+    //   originalFn: CommandOriginalFn,
+    //   url: string,
+    //   options: Partial<VisitOptions>
+    // ): Chainable<Element>;
+  }
+}
+
+Cypress.Commands.add('getByDataTestId', (selector, ...args) => {
+  return cy.get(`[data-testid=${selector}]`, ...args);
+});

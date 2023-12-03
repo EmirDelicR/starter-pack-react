@@ -305,7 +305,6 @@ And you have project setup with `Vite`, `TypeScript`, `ESLint`, `Prettier` and `
 
 [Back to TOP](#documentation)
 
-
 ## cypress
 
 [Documentation](https://testing-library.com/docs/cypress-testing-library/intro/)
@@ -314,34 +313,72 @@ And you have project setup with `Vite`, `TypeScript`, `ESLint`, `Prettier` and `
 npm install -D cypress @testing-library/cypress eslint-plugin-cypress
 ```
 
-```js
+Add es lint config to `.eslintrc`
+
+```json
 {
-  "extends": [
-    "eslint:recommended",
-    "prettier"
-  ],
-  "plugins": ["cypress"],
   "env": {
+    ...
     "cypress/globals": true
-  }
+  },
+  "plugins": ["react", "@typescript-eslint", "cypress", "prettier"],
 }
-
 ```
 
-Add scipt to package.json
+Create `cypress.config.ts` file:
 
 ```js
-"cypress": "cypress open"
+import { defineConfig } from 'cypress';
+
+export default defineConfig({
+  e2e: {
+    baseUrl: 'http://localhost:3000',
+    specPattern: 'cypress/e2e/**/*.{ts,tsx}',
+    setupNodeEvents(_on, _config) {
+      // implement node event listeners here
+    }
+  },
+
+  component: {
+    devServer: {
+      framework: 'react',
+      bundler: 'vite'
+    }
+  }
+});
 ```
 
-### Storybook
+Add script to `package.json`
+
+```js
+"scripts": {
+  ...
+  "cypress": "cypress open --e2e"
+},
+```
+
+Run:
+
+```console
+npm run cypress
+```
+
+[Back to TOP](#documentation)
+
+## storybook
+
+[Documentation](https://storybook.js.org/docs/get-started/install)
 
 ```code
 npx sb init
+```
 
+```console
 npm run storybook
 ```
 
-### Icons used in project
+[Back to TOP](#documentation)
 
-https://react-icons.github.io/react-icons/icons?name=ri
+#### Icons used in project
+
+[Icons](https://react-icons.github.io/react-icons/icons?name=ri)
