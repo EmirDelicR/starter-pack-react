@@ -177,8 +177,12 @@ In `tsconfig.json` add:
   "compilerOptions": {
     ...
     /* Types */
-    "types": ["vite/client", "vitest/globals"]
-
+    "types": [
+      "vite/client",
+      "vitest/globals",
+      "node",
+      "@testing-library/jest-dom"
+    ]
   }
 }
 ```
