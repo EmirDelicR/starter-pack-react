@@ -11,12 +11,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './setupTests.ts',
-    css: {
-      modules: {
-        classNameStrategy: 'non-scoped'
-      }
-    }
+    setupFiles: './setupTests.ts'
   },
   server: {
     host: true,
