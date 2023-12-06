@@ -9,8 +9,6 @@ describe('Simple working test', () => {
 
     const welcomeText = screen.getByText('Setup ne project');
 
-    screen.debug(welcomeText);
-
     expect(welcomeText).toBeInTheDocument();
   });
 });

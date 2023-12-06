@@ -1,6 +1,6 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { screen, vi } from 'vitest';
+import { vi } from 'vitest';
 
 import { Select } from './Select';
 
@@ -73,7 +73,7 @@ describe('<Select/>', () => {
     expect(presetValues.length).toBe(2);
   });
 
-  it('should remove predefined entry', () => {
+  it('should remove predefined entry', async () => {
     let value = { label: 'test 1', value: 'test 1' };
     const onChange = vi.fn().mockImplementation((val) => (value = val));
 
@@ -91,7 +91,8 @@ describe('<Select/>', () => {
 
     expect(select.querySelectorAll('.value')[0].innerHTML).toBe('test 1');
 
-    userEvent.click(button);
+    await userEvent.click(button);
+
     rerender(
       <Select
         options={options}
@@ -104,7 +105,7 @@ describe('<Select/>', () => {
     expect(select.querySelectorAll('.value')[0].innerHTML).toBe('');
   });
 
-  it('should remove multiple predefined entries', () => {
+  it('should remove multiple predefined entries', async () => {
     let value = [
       { label: 'test 1', value: 'test 1' },
       { label: 'test 2', value: 'test 2' }
@@ -125,7 +126,8 @@ describe('<Select/>', () => {
 
     expect(select.querySelectorAll('.option-badge').length).toBe(2);
 
-    userEvent.click(button);
+    await userEvent.click(button);
+
     rerender(
       <Select
         options={options}

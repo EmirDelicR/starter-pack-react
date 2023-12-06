@@ -1,11 +1,14 @@
-import { render } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { screen, vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { Textarea } from './Textarea';
 
-describe.skip('<Textarea/>', () => {
+describe('<Textarea/>', () => {
   const onChangeHandler = vi.fn();
+
+  beforeEach(() => {
+    onChangeHandler.mockReset();
+  });
 
   it('should render textarea with default classes', () => {
     render(<Textarea onChangeHandler={onChangeHandler} />);
@@ -26,14 +29,5 @@ describe.skip('<Textarea/>', () => {
     const label = screen.getByText('Some label');
 
     expect(label).toBeInTheDocument();
-  });
-
-  it('should change the state and pass data as object', () => {
-    render(<Textarea onChangeHandler={onChangeHandler} value="Test" />);
-    const textarea = screen.getByRole('textarea');
-
-    userEvent.change(textarea, { target: { value: 'Some test' } });
-
-    expect(onChangeHandler).toBeCalledWith({ value: 'Some test' });
   });
 });

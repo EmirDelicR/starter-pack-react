@@ -17,7 +17,7 @@ describe('<Checkbox/>', () => {
     );
     const checkbox = screen.getByRole('checkbox');
 
-    // expect(checkbox.classList.contains('checkbox')).toBe(true);
+    expect(checkbox.classList.contains('checkbox')).toBe(true);
     expect(checkbox.hasAttribute('name')).toBe(true);
     expect(checkbox.getAttribute('name')).toBe('test');
     expect(checkbox.hasAttribute('id')).toBe(true);
