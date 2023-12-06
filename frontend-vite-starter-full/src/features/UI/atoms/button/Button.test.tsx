@@ -10,9 +10,9 @@ describe('<Button/>', () => {
 
     const button = screen.getByRole('button');
 
-    expect(button.classList.contains('btn')).eq(true);
-    expect(button.classList.contains('primary')).eq(true);
-    expect(button.classList.contains('medium')).eq(true);
+    expect(button.classList.contains('btn')).toBe(true);
+    expect(button.classList.contains('primary')).toBe(true);
+    expect(button.classList.contains('medium')).toBe(true);
   });
 
   it('should render button with default custom class', () => {
@@ -20,7 +20,7 @@ describe('<Button/>', () => {
 
     const button = screen.getByRole('button');
 
-    expect(button.classList.contains('test')).eq(true);
+    expect(button.classList.contains('test')).toBe(true);
   });
 
   it('should render button with type class secondary', () => {
@@ -28,7 +28,7 @@ describe('<Button/>', () => {
 
     const button = screen.getByRole('button');
 
-    expect(button.classList.contains('secondary')).eq(true);
+    expect(button.classList.contains('secondary')).toBe(true);
   });
 
   it('should render button with custom size', () => {
@@ -36,7 +36,7 @@ describe('<Button/>', () => {
 
     const button = screen.getByRole('button');
 
-    expect(button.classList.contains('large')).eq(true);
+    expect(button.classList.contains('large')).toBe(true);
   });
 
   it('should render call custom function on click', async () => {

@@ -169,6 +169,20 @@ export default defineConfig({
 
 `/// <reference types="vitest" />` This part is only needed if you use TypeScript
 
+In `tsconfig.json` add:
+
+```js
+{
+
+  "compilerOptions": {
+    ...
+    /* Types */
+    "types": ["vite/client", "vitest/globals"]
+
+  }
+}
+```
+
 Add script to `package.json`:
 
 ```js
