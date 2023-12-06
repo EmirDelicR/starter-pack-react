@@ -27,7 +27,7 @@
     },
 
     /* Types */
-    "types": ["cypress", "@testing-library/cypress"]
+    "types": ["vite/client", "vitest/globals"]
   },
   "include": ["src"],
   "exclude": ["node_modules"],

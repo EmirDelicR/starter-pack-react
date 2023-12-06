@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
@@ -39,15 +39,14 @@ describe('<Button/>', () => {
     expect(button.classList.contains('large')).eq(true);
   });
 
-  it('should render call custom function on click', () => {
+  it('should render call custom function on click', async () => {
     const customHandler = vi.fn();
     render(<Button onClickHandler={customHandler}>Test</Button>);
 
     const button = screen.getByRole('button');
 
-    userEvent.click(button);
+    await userEvent.click(button);
 
-    expect(true).eq(true);
-    // expect(customHandler).callCount(1);
+    expect(customHandler).toBeCalledTimes(1);
   });
 });

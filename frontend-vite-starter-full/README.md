@@ -157,6 +157,12 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './setupTests.ts',
+    // ADD this to not hash classes
+    css: {
+      modules: {
+        classNameStrategy: 'non-scoped'
+      }
+    }
   },
 });
 ```
