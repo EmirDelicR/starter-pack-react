@@ -5,7 +5,7 @@
 - ES lint
 - Prettier
 - RTL -React testing library with Vitest
-- Mentain UI Library
+- [Mentain UI Library](https://mantine.dev/getting-started/)
 
 ## documentation
 
@@ -164,10 +164,9 @@ export default defineConfig({
 
 `/// <reference types="vitest" />` This part is only needed if you use TypeScript
 
-
 In `tsconfig.json` add:
 
-```js
+````js
 {
 
   "compilerOptions": {
@@ -190,7 +189,7 @@ Add script to `package.json`:
   "test": "vitest",
   "coverage": "vitest run --coverage"
 }
-```
+````
 
 Create `[fileName].test.[tsx/ts]` and add:
 
