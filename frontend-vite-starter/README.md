@@ -151,11 +151,35 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './setupTests.ts',
+    // ADD this to not hash classes
+    css: {
+      modules: {
+        classNameStrategy: 'non-scoped'
+      }
+    }
   },
 });
 ```
 
 `/// <reference types="vitest" />` This part is only needed if you use TypeScript
+
+
+In `tsconfig.json` add:
+
+```js
+{
+
+  "compilerOptions": {
+    ...
+    /* Types */
+    "types": [
+      "vite/client",
+      "vitest/globals",
+      "node",
+      "@testing-library/jest-dom"
+    ]
+  }
+}
 
 Add script to `package.json`:
 
