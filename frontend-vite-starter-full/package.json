@@ -14,13 +14,24 @@
     "format": "npm run prettier:fix && npm run lint:fix",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "cypress:open": "cypress open --e2e"
+    "cypress:open": "cypress open --e2e",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.4",
+    "@storybook/addon-interactions": "^7.6.4",
+    "@storybook/addon-links": "^7.6.4",
+    "@storybook/addon-onboarding": "^1.0.9",
+    "@storybook/blocks": "^7.6.4",
+    "@storybook/react": "^7.6.4",
+    "@storybook/react-vite": "^7.6.4",
+    "@storybook/test": "^7.6.4",
     "@testing-library/cypress": "^10.0.1",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.1.2",
@@ -40,11 +51,18 @@
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
+    "eslint-plugin-storybook": "^0.6.15",
     "jsdom": "^23.0.1",
     "prettier": "^2.7.1",
     "sass": "^1.54.3",
+    "storybook": "^7.6.4",
     "typescript": "^5.2.2",
     "vite": "^5.0.0",
     "vitest": "^1.0.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }

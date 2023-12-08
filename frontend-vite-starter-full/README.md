@@ -396,6 +396,15 @@ npm run cypress:open
 npx sb init
 ```
 
+Add script to `package.json`:
+
+```js
+"scripts": {
+  ...,
+  "storybook": "storybook dev -p 6006",
+}
+```
+
 ```console
 npm run storybook
 ```
@@ -404,4 +413,4 @@ npm run storybook
 
 #### Icons used in project
 
-[Icons](https://react-icons.github.io/react-icons/icons?name=ri)
+[Icons](https://react-icons.github.io/react-icons/)
