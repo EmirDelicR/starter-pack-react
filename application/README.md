@@ -23,6 +23,8 @@ sudo chmod -R 777 stop.sh
 ./run.sh
 ```
 
+NOTE: installing cypress nad storybook will take some time.
+
 3. Step
 
 Go to:

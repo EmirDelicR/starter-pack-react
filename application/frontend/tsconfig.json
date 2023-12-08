@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2021",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES2021", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -30,7 +30,12 @@
     },
 
     /* Types */
-    "types": ["vite/client", "vitest/globals", "@testing-library/jest-dom"]
+    "types": [
+      "vite/client",
+      "vitest/globals",
+      "vite-plugin-svgr/client",
+      "@testing-library/jest-dom"
+    ]
   },
   "include": ["src"],
   "exclude": ["node_modules"],
