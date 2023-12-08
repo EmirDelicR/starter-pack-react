@@ -70,6 +70,32 @@ _Lint project:_
 npm run lint
 ```
 
+_Run with docker_
+
+First, you need to add permissions to the folder:
+
+```console
+sudo chmod -R 777 scripts
+```
+
+To use docker you need to install docker on your machine and run:
+
+```console
+./scripts/start_docker.sh
+```
+
+To stop the container and (optional) remove the container and image run
+
+```console
+./scripts/stop_container.sh
+```
+
+If you want to omit sudo when calling the docker command use this command and restart your PC.
+
+```console
+sudo usermod -aG docker $USER
+```
+
 [Back to TOP](#documentation)
 
 ## node
@@ -87,6 +113,13 @@ sudo n stable
 ```console
 npm outdated
 npx npm-check-updates -u
+```
+
+#### Clear cache
+
+```console
+npm cache clean --force
+npm cache verify
 ```
 
 [Back to TOP](#documentation)
