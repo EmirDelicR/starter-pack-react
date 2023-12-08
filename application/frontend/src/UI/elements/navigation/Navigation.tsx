@@ -4,7 +4,7 @@ import { FaHome } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 
 import useMediaQuery from '@/hooks/useMediaQuery';
-import { ReactComponent as Logo } from '@/media/main-logo.svg';
+import Logo from '@/media/main-logo.svg?react';
 import { useAppSelector } from '@/store';
 import { selectIsUserLoggedIn } from '@/store/userSlice';
 import { classNameHelper } from '@/utils';

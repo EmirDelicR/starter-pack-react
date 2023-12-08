@@ -7,7 +7,7 @@ import {
 } from 'react-icons/fa';
 
 import { SocialLink } from '@/UI/components';
-import { ReactComponent as Logo } from '@/media/main-logo.svg';
+import Logo from '@/media/main-logo.svg?react';
 
 import classes from './Footer.module.scss';
 

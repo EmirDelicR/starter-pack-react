@@ -62,14 +62,24 @@ const viteEslint = eslint({
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), viteEslint, svgr(), pwaPlugin],
+  plugins: [
+    react(),
+    viteEslint,
+    svgr({ include: '**/*.svg?react', exclude: '' }),
+    pwaPlugin
+  ],
   resolve: {
     alias: [{ find: '@', replacement: '/src' }]
   },
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './setupTests.ts'
+    setupFiles: './setupTests.ts',
+    css: {
+      modules: {
+        classNameStrategy: 'non-scoped'
+      }
+    }
   },
   server: {
     port: 3000
