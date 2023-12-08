@@ -14,6 +14,7 @@ To start application follow steps:
 ```console
 sudo chmod -R 777 backend/scripts
 sudo chmod -R 777 run.sh
+sudo chmod -R 777 stop.sh
 ```
 
 2. Step
@@ -37,4 +38,14 @@ you can now use in frontend user:
 
 and that is it.
 
-NOTE: port fro backend is `3100` and frontend is `3000`
+NOTE: port for backend is `3100` and frontend is `3000`
+
+4. Step
+
+To stop application open new terminal and navigate to application folder and run:
+
+```console
+./stop.sh
+```
+
+follow instructions.

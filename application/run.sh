@@ -21,7 +21,7 @@ echo -e "${BLUE}3. Populate database with data."
 echo -e "${GREEN} Successfuly added data."
 
 echo -e "${BLUE}4. Creating and populating .env file."
-touch backend/.env && chmod 777 backend/.env
+touch ./backend/.env && chmod 777 ./backend/.env
 echo -en "HOST='localhost'\nPORT='3100'\nAUTH_PASSWORD_SALT='encription-salt'\nAUTH_JWT_SECRET='jwt-secret'\nAUTH_JWT_EXPIRES='24h'\nAUTH_JWT_REFRESH_SECRET='jwt-refresh-secret'\nAUTH_JWT_REFRESH_EXPIRES='48h'" > .env 
 echo -e "${GREEN} Successfuly added data to .env file."
 

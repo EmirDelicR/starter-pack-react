@@ -160,7 +160,7 @@ you can now use in frontend user:
 
 **Check API End points**
 
-http://localhost:3100/api-docs
+[Endpoint](http://localhost:3100/api-docs)
 
 or you can use backend-api.postman_collection.json in Postman
 
