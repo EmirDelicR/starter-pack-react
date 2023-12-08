@@ -18,7 +18,7 @@ sudo docker ps -a
 sudo docker images
 
 echo -e "${BLUE}Do you want to remove docker image.${RED}"
-read -e -p "[yes/no]: " -i "no" remove_docker_image
+read -e -p "[yes/no]: " -i "yes" remove_docker_image
 
 if [ "$remove_docker_image" == "yes" ]; then
     # Remove image
@@ -33,7 +33,7 @@ else
 fi
 
 echo -e "${BLUE}Do you want to remove node docker image.${RED}"
-read -e -p "[yes/no]: " -i "no" remove_node_image
+read -e -p "[yes/no]: " -i "yes" remove_node_image
 
 if [ "$remove_node_image" == "yes" ]; then
     # Remove image
