@@ -345,7 +345,6 @@ Add es lint config to `.eslintrc`
     ...
     "cypress/globals": true
   },
-  "plugins": ["react", "@typescript-eslint", "cypress", "prettier"],
 }
 ```
 
@@ -377,14 +376,14 @@ Add script to `package.json`
 ```js
 "scripts": {
   ...
-  "cypress": "cypress open --e2e"
+  "cypress:open": "cypress open --e2e"
 },
 ```
 
 Run:
 
 ```console
-npm run cypress
+npm run cypress:open
 ```
 
 [Back to TOP](#documentation)
