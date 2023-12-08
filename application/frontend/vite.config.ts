@@ -61,10 +61,10 @@ const viteEslint = eslint({
 });
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig((env) => ({
   plugins: [
     react(),
-    viteEslint,
+    env.mode !== 'test' && viteEslint,
     svgr({ include: '**/*.svg?react', exclude: '' }),
     pwaPlugin
   ],
@@ -91,4 +91,4 @@ export default defineConfig({
       }
     }
   }
-});
+}));
