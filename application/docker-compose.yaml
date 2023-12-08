@@ -3,8 +3,6 @@ services:
   backend:
     build: ./backend
     network_mode: 'host'
-    ports:
-      - '3100:3100'
     volumes:
       - logs:/app/logs
       - ./backend:/app
