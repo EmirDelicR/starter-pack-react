@@ -1,5 +1,4 @@
 import { Application } from 'express';
-import path from 'path';
 
 import { middleware } from 'src/middleware';
 

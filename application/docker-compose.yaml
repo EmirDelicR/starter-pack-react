@@ -2,6 +2,7 @@ version: '3.7'
 services:
   backend:
     build: ./backend
+    network_mode: 'host'
     ports:
       - '3100:3100'
     volumes:
