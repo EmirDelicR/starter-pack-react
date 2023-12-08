@@ -1,12 +1,22 @@
+## Starter pack with
+
+- Vite
+- React v18.2
+- ES lint
+- Prettier
+- RTL -React testing library with Vitest
+- Cypress
+- Storybook
+
 ## documentation
 
 [General](#general)
 
 [Node upgrade](#node)
 
-[Path config](#path-config)
+[SCSS](#scss)
 
-[Add SCSS](#scss)
+[Path config](#path-config)
 
 [Unit tests](#unit-tests)
 
@@ -14,7 +24,25 @@
 
 [Prettier](#prettier)
 
+[Cypress](#cypress)
+
+[Storybook](#storybook)
+
+[Packages used in project](#packages)
+
+[PWA](#pwa)
+
 ## general
+
+#### React app with Vite
+
+[Vite Documentation](https://vitejs.dev/guide/)
+
+```code
+npm create vite@latest my-react-app
+```
+
+Chose `react` and `typescript`.
 
 #### Run project
 
@@ -42,21 +70,11 @@ _Lint project:_
 npm run lint
 ```
 
-_Open story book:_
-
-```console
-npm run storybook
-```
-
-_Run cypress tests:_
-
-```console
-npm run cypress:open
-```
-
 [Back to TOP](#documentation)
 
 ## node
+
+#### Update Node to latest version
 
 ```console
 sudo npm cache clean -f
@@ -64,7 +82,7 @@ sudo npm install -g n
 sudo n stable
 ```
 
-## Update packages
+#### Update packages to latest version
 
 ```console
 npm outdated
@@ -73,11 +91,19 @@ npx npm-check-updates -u
 
 [Back to TOP](#documentation)
 
+## scss
+
+```code
+npm i -D sass
+```
+
+Now change all `.css` files to `.scss` and start project.
+
+[Back to TOP](#documentation)
+
 ## path-config
 
-**_Path Config_**
-
-in vite.config.ts add
+in `vite.config.ts` add:
 
 ```js
 export default defineConfig({
@@ -88,27 +114,38 @@ export default defineConfig({
 });
 ```
 
-[Back to TOP](#documentation)
+in `tsconfig.json` add:
 
-## scss
-
-```console
-npm i -D sass
+```js
+{
+  "compilerOptions": {
+    ...,
+    /* Path - this part here */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
 ```
+
+Reload VSCode -> press `Strg + P` and type `> rel` use `Developer: Reload Window`
 
 [Back to TOP](#documentation)
 
 ## unit-tests
 
-[Vitest migration](https://willcodefor.beer/posts/vitest)
+**_Jest and Vitest configuration_**
 
 [RTL Documentation](https://testing-library.com/docs/react-testing-library/setup)
 
-```console
-npm i -D @testing-library/jest-dom @testing-library/react @testing-library/react-hooks @testing-library/user-event jsdom vitest
+```code
+npm i -D @testing-library/jest-dom @testing-library/react @testing-library/user-event jsdom vitest
 ```
 
-Add `setupTests.ts` to the root of the the project, and in that file add:
+Add `setupTests.ts` to root of the project! and in that file add
 
 ```js
 import '@testing-library/jest-dom';
@@ -124,13 +161,37 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './setupTests.ts',
+    // ADD this to not hash classes
+    css: {
+      modules: {
+        classNameStrategy: 'non-scoped'
+      }
+    }
   },
 });
 ```
 
-`/// <reference types="vitest" />` This part is only needed if you use TS
+`/// <reference types="vitest" />` This part is only needed if you use TypeScript
 
-Add script to package.json
+In `tsconfig.json` add:
+
+```js
+{
+
+  "compilerOptions": {
+    ...
+    /* Types */
+    "types": [
+      "vite/client",
+      "vitest/globals",
+      "node",
+      "@testing-library/jest-dom"
+    ]
+  }
+}
+```
+
+Add script to `package.json`:
 
 ```js
 "scripts": {
@@ -140,35 +201,37 @@ Add script to package.json
 }
 ```
 
+Create `[fileName].test.[tsx/ts]` and add:
+
+```js
+describe('Simple working test', () => {
+  it('should ...', () => {
+    expect(true).toEqual(true);
+  });
+});
+```
+
+Run test:
+
+```console
+npm run test
+```
+
 [Back to TOP](#documentation)
 
 ## es-linting
 
-[Vite Plugins](https://vitejs.dev/guide/api-plugin.html#rollup-plugin-compatibility)
+Ultimately, we will configure VSCode to use ESLint and Prettier to find problems and format our code, respectively. If you don't have the extensions installed yet, install them: [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
-[Vite all Rollup Plugins](https://vite-rollup-plugins.patak.dev/)
+If you used command:
 
-[ES Article](https://www.robinwieruch.de/vite-eslint/)
-
-```console
-npm i -D vite-plugin-eslint eslint eslint-config-react-app
+```code
+npm create vite@latest my-react-app
 ```
 
-```js
-// in vite.config.ts
-import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
-import eslint from 'vite-plugin-eslint';
+this will create file `.eslint.cjs` but you can change that to `.eslintrc` and use config.
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react(), eslint()]
-});
-```
-
-[Back to TOP](#documentation)
-
-## prettier
+You can use basic presets:
 
 ```json
 {
@@ -176,17 +239,16 @@ export default defineConfig({
     "browser": true,
     "es2021": true
   },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/jsx-runtime"
+    "plugin:react/jsx-runtime",
+    "eslint-config-prettier"
   ],
+  "ignorePatterns": ["dist", ".eslintrc"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -208,44 +270,131 @@ export default defineConfig({
 }
 ```
 
-Add prettier extension for VSCode and install in project
+Or you can manually setup all by fallowing this links:
+
+[Vite Plugins](https://vitejs.dev/guide/api-plugin.html#rollup-plugin-compatibility)
+
+[Vite all Rollup Plugins](https://vite-rollup-plugins.patak.dev/)
+
+[ES Article](https://sourcelevel.io/blog/how-to-setup-eslint-and-prettier-on-node)
 
 ```console
-npm i --save-dev prettier eslint-config-prettier eslint-plugin-prettier
-```
-
-Go to VSCode setting search for Default Formatter and add **_ebsenp.prettier-vscode_**
-
-Add prettier.config.js file
-
-```js
-module.exports = {
-  tabWidth: 2,
-  semi: true,
-  singleQuote: true,
-  trailingComma: 'es5'
-};
+npx eslint --init
 ```
 
 [Back to TOP](#documentation)
 
-#### Icons used in project
+## prettier
 
-_react-icons_
+Add prettier extension for VSCode and install in project:
 
-['React-icons'](https://react-icons.github.io/react-icons/icons?name=ri)
+```console
+npm i -D prettier eslint-config-prettier eslint-plugin-prettier
+```
 
-#### Custom Libraries in project
+Go to VSCode setting search for Default Formatter and add **_ebsenp.prettier-vscode_**
 
-_tenStack Table_
+Add `.prettierrc` file
 
-['TenStack Table'](https://tanstack.com/table/v8/docs/guide/installation)
+```json
+{
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "endOfLine": "auto",
+  "importOrder": ["^@/components", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
+```
 
-_react hook form_
+Update `.eslintrc`:
 
-['React hook form'](https://react-hook-form.com/)
+```json
+{
+  "extends": [
+    ...,
+    // Add this part here
+    "prettier"
+  ],
+  // Add this part here
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    ...,
+    // Add this part here
+    "prettier/prettier": "error",
+  }
+}
+```
 
-#### Storybook
+And you have project setup with `Vite`, `TypeScript`, `ESLint`, `Prettier` and `Vitest`.
+
+[Back to TOP](#documentation)
+
+## cypress
+
+[Documentation](https://testing-library.com/docs/cypress-testing-library/intro/)
+
+```code
+npm install -D cypress @testing-library/cypress eslint-plugin-cypress
+```
+
+Add es lint config to `.eslintrc`
+
+```json
+{
+  "env": {
+    ...
+    "cypress/globals": true
+  },
+}
+```
+
+Create `cypress.config.ts` file:
+
+```js
+import { defineConfig } from 'cypress';
+
+export default defineConfig({
+  e2e: {
+    baseUrl: 'http://localhost:3000',
+    specPattern: 'cypress/e2e/**/*.{ts,tsx}',
+    setupNodeEvents(_on, _config) {
+      // implement node event listeners here
+    }
+  },
+
+  component: {
+    devServer: {
+      framework: 'react',
+      bundler: 'vite'
+    }
+  }
+});
+```
+
+Add script to `package.json`
+
+```js
+"scripts": {
+  ...
+  "cypress:open": "cypress open --e2e"
+},
+```
+
+Run:
+
+```console
+npm run cypress:open
+```
+
+[Back to TOP](#documentation)
+
+## storybook
+
+[Documentation](https://storybook.js.org/docs/get-started/install)
 
 [Vite Storybook](https://storybook.js.org/docs/react/builders/vite)
 
@@ -256,6 +405,39 @@ _react hook form_
 ```console
 npx sb@next automigrate
 ```
+
+```code
+npx sb init
+```
+
+Add script to `package.json`:
+
+```js
+"scripts": {
+  ...,
+  "storybook": "storybook dev -p 6006",
+}
+```
+
+```console
+npm run storybook
+```
+
+[Back to TOP](#documentation)
+
+## packages
+
+_react-icons_
+
+[React-icons](https://react-icons.github.io/react-icons/)
+
+_tenStack Table_
+
+['TenStack Table'](https://tanstack.com/table/v8/docs/guide/installation)
+
+_react hook form_
+
+['React hook form'](https://react-hook-form.com/)
 
 #### Adding redux to project
 
@@ -277,15 +459,7 @@ npm i react-router-dom
 
 [Link-with-tools](https://www.smashingmagazine.com/2021/03/svg-generators/)
 
-## React app with Vite
-
-[Vite Documentation](https://vitejs.dev/guide/)
-
-```code
-npm create vite@latest my-react-app --template react-ts
-```
-
-## Setup PWA
+## pwa
 
 [Vite PWA](https://vite-pwa-org.netlify.app/guide/register-service-worker.html)
 
