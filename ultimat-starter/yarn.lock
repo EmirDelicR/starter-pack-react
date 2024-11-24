@@ -888,6 +888,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tabler/icons-react@npm:^3.22.0":
+  version: 3.22.0
+  resolution: "@tabler/icons-react@npm:3.22.0"
+  dependencies:
+    "@tabler/icons": "npm:3.22.0"
+  peerDependencies:
+    react: ">= 16"
+  checksum: 10c0/1973d4203b6c84f464231ad1bb0a43f2c9b3e06597b662496f61db8483957b75e7d40202b5cf3e57326c6d472c6535b9d8151df1114219f626e84a83cf6eee3f
+  languageName: node
+  linkType: hard
+
+"@tabler/icons@npm:3.22.0":
+  version: 3.22.0
+  resolution: "@tabler/icons@npm:3.22.0"
+  checksum: 10c0/d46eb2199010509d457e03fd4206c9e47b9ba6a01bc17c94f68a3696028f3320a2f149bbc28bf3af5479219195f609f5a4557ad1b7965bc359ccfb2f5073d026
+  languageName: node
+  linkType: hard
+
 "@testing-library/dom@npm:^10.4.0":
   version: 10.4.0
   resolution: "@testing-library/dom@npm:10.4.0"
@@ -3677,6 +3695,7 @@ __metadata:
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.3.1"
     "@mantine/core": "npm:7.14.1"
     "@mantine/hooks": "npm:7.14.1"
+    "@tabler/icons-react": "npm:^3.22.0"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.5.0"
     "@testing-library/react": "npm:^16.0.1"
