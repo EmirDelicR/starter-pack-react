@@ -1,13 +1,11 @@
+import { lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Layout } from '@/components/Layout/Layout';
-import { HomePage } from '@/pages/Home.page';
-import { NotFoundPage } from '@/pages/NotFound.page';
+import { Layout } from '@/UI/components/Layout/Layout';
+
+const HomePage = lazy(() => import('@/UI/pages/Home.page'));
+const NotFoundPage = lazy(() => import('@/UI/pages/NotFound.page'));
 
 // Good post: https://www.dhiwise.com/post/the-power-of-createbrowserrouter-optimizing-your-react-app
-// [] create form using react form
-// [] create pagination with URL
-// [] add RTKQuery with API and Store SLICE
-
 const router = createBrowserRouter(
   [
     {

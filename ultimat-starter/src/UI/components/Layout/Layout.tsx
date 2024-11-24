@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AppShell, Box, Burger, Divider, Group, Stack, UnstyledButton } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { ColorSchemeToggle } from '@/components/ColorSchemeToggle/ColorSchemeToggle';
 import { useAppSelector } from '@/store';
+import { ColorSchemeToggle } from '@/UI/components/ColorSchemeToggle/ColorSchemeToggle';
 import classes from './Layout.module.css';
 
 const NAVIGATION = [

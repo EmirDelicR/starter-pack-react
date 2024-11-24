@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import { Button, Container, SimpleGrid, Stack, Text, Title } from '@mantine/core';
+import { Button, Container, Stack, Text, Title } from '@mantine/core';
 
-export function NotFoundPage() {
+export default function NotFoundPage() {
   const navigate = useNavigate();
 
   const goToHomePage = () => {
