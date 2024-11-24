@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AppShell, Box, Burger, Divider, Group, Stack, UnstyledButton } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
@@ -62,7 +62,9 @@ export function Layout() {
       </AppShell.Navbar>
 
       <AppShell.Main>
-        <Outlet />
+        <Suspense fallback={<>Loading...</>}>
+          <Outlet />
+        </Suspense>
       </AppShell.Main>
     </AppShell>
   );
