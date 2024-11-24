@@ -1,6 +1,14 @@
 ## This is just my options how to setup project
 
+### Update
 
+```console
+npm outdated
+npm update --save
+npm update <package name> --save
+
+npm update --save
+```
 
 ### Frontend
 
@@ -9,7 +17,7 @@
 #### State managment
 
 - Redux Toolkit with RTK Query
-- FOr small projects - zustand 
+- For small projects - zustand
 
 #### Forms
 
@@ -17,14 +25,12 @@
 
 #### Testing
 
-- RTL 
+- RTL
 - [Cypress](https://testing-library.com/docs/cypress-testing-library/intro/)
 
 [Storybook](https://storybook.js.org/docs/react/get-started/introduction) UI testing and documentation tool
 
-
 ### Folder structure
-
 
 ```js
 └── src/
@@ -70,20 +76,19 @@
         ├── index.ts
         └── login.ts
 
- ```
+```
 
- index.ts file
+index.ts file
 
-```js 
+```js
 // features/todo/todo-list
-export { TodoList } from "./todo-list.component";
-export { useTodoList } from "./use-todo-list";
+export { TodoList } from './todo-list.component';
+export { useTodoList } from './use-todo-list';
 
-// feature/todo/index.js 
-export * from "./create-todo-form";
-export * from "./todo-list";
+// feature/todo/index.js
+export * from './create-todo-form';
+export * from './todo-list';
 
 // import in places
-import { TodoList } from "@features/todo";
-
+import { TodoList } from '@features/todo';
 ```
