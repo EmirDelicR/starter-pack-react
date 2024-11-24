@@ -1,7 +1,14 @@
-import { Anchor, Text, Title } from '@mantine/core';
+import { Anchor, Button, Flex, Text, Title } from '@mantine/core';
+import { useAppDispatch } from '@/store';
+import { setVersion } from '@/store/globalState/globalStoreSlice';
 import classes from './Welcome.module.css';
 
 export function Welcome() {
+  const dispatch = useAppDispatch();
+  const updateVersion = () => {
+    dispatch(setVersion({ version: 'v2' }));
+  };
+
   return (
     <>
       <Title className={classes.title} ta="center" mt={100}>
@@ -18,6 +25,9 @@ export function Welcome() {
         </Anchor>
         .
       </Text>
+      <Flex mt="lg" justify="center">
+        <Button onClick={updateVersion}>Update version</Button>
+      </Flex>
     </>
   );
 }
