@@ -2,8 +2,8 @@ import { lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from '@/UI/components/Layout/Layout';
 
-const HomePage = lazy(() => import('@/UI/pages/Home.page'));
-const NotFoundPage = lazy(() => import('@/UI/pages/NotFound.page'));
+const HomePage = lazy(() => import('@/UI/pages/HomePage'));
+const NotFoundPage = lazy(() => import('@/UI/pages/NotFoundPage'));
 
 // Good post: https://www.dhiwise.com/post/the-power-of-createbrowserrouter-optimizing-your-react-app
 const router = createBrowserRouter(
