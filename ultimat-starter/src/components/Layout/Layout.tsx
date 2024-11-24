@@ -25,8 +25,10 @@ export function Layout() {
       padding="md"
     >
       <AppShell.Header>
-        <Group h="100%" style={{ border: '1px solid red' }} align="center" justify="space-between">
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+        <Group h="100%" px="md" align="center" justify="space-between">
+          <Group>
+            <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+          </Group>
           <ColorSchemeToggle />
         </Group>
       </AppShell.Header>
