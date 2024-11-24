@@ -34,14 +34,11 @@ export function Layout() {
             data-active={item.label === active || undefined}
             className={classes.link}
             to={item.link}
+            onClick={() => {
+              setActive(item.label);
+            }}
           >
-            <UnstyledButton
-              onClick={() => {
-                setActive(item.label);
-              }}
-            >
-              {item.label}
-            </UnstyledButton>
+            <UnstyledButton>{item.label}</UnstyledButton>
           </Link>
         ))}
       </AppShell.Navbar>

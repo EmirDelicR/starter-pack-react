@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Layout } from '@/components/Layout/Layout';
 import { HomePage } from '@/pages/Home.page';
-import { Layout } from './components/Layout/Layout';
+import { NotFoundPage } from '@/pages/NotFound.page';
 
 // Good post: https://www.dhiwise.com/post/the-power-of-createbrowserrouter-optimizing-your-react-app
 // TODO @ed
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: 'about',
         element: <div>About page</div>,
+      },
+      {
+        path: '*',
+        element: <NotFoundPage />,
       },
     ],
   },
