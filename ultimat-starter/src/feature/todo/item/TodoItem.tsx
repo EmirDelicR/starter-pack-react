@@ -1,5 +1,5 @@
 import { IconBriefcase } from '@tabler/icons-react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import { Box, Flex, Group, LoadingOverlay, Paper, Text, Title } from '@mantine/core';
 import { MockData } from '../store/MockData';
 
