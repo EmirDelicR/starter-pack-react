@@ -1,14 +1,24 @@
 import { Suspense, useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import { AppShell, Box, Burger, Divider, Group, Stack, UnstyledButton } from '@mantine/core';
+import { Link, Outlet, useLocation } from 'react-router-dom';
+import {
+  AppShell,
+  Box,
+  Burger,
+  Divider,
+  Group,
+  LoadingOverlay,
+  Stack,
+  UnstyledButton,
+} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { useAppSelector } from '@/store';
-import { ColorSchemeToggle } from '@/UI/components/ColorSchemeToggle/ColorSchemeToggle';
+import { ColorSchemeToggle } from '@/UI/components/colorSchemeToggle/ColorSchemeToggle';
+import ErrorBoundary from '../error/ErrorBoundary';
 import classes from './Layout.module.css';
 
 const NAVIGATION = [
   { link: '/', label: 'Home' },
-  { link: '/about', label: 'About' },
+  { link: '/work', label: 'Work' },
 ];
 
 export function Layout() {
@@ -55,16 +65,28 @@ export function Layout() {
             ))}
           </Box>
           <Box>
-            <Divider />
+            <Divider mb="md" />
             @ED - {appVersion}
           </Box>
         </Stack>
       </AppShell.Navbar>
 
       <AppShell.Main>
-        <Suspense fallback={<>Loading...</>}>
-          <Outlet />
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense
+            fallback={
+              <Box pos="relative" h="90vh">
+                <LoadingOverlay
+                  visible={true}
+                  zIndex={1000}
+                  overlayProps={{ radius: 'sm', blur: 2 }}
+                />
+              </Box>
+            }
+          >
+            <Outlet />
+          </Suspense>
+        </ErrorBoundary>
       </AppShell.Main>
     </AppShell>
   );

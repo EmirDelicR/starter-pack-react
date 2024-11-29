@@ -1,4 +1,4 @@
-import { Welcome } from '@/UI/components/Welcome/Welcome';
+import { Welcome } from '@/UI/components/welcome/Welcome';
 
 export default function HomePage() {
   return <Welcome />;

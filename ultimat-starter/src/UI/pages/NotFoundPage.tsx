@@ -1,5 +1,5 @@
 import { Container, Stack, Text, Title } from '@mantine/core';
-import HomeButton from '../components/HomeButton/HomeButton';
+import HomeButton from '../components/homeButton/HomeButton';
 
 export default function NotFoundPage() {
   return (

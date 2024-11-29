@@ -25,7 +25,7 @@ export function Welcome() {
         </Anchor>
         .
       </Text>
-      <Flex mt="lg" justify="center">
+      <Flex mt="lg" justify="center" gap="md">
         <Button onClick={updateVersion}>Update version</Button>
       </Flex>
     </>
