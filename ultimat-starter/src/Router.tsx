@@ -1,44 +1,25 @@
 import { lazy } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from '@/UI/components/layout/Layout';
 
 const HomePage = lazy(() => import('@/UI/pages/HomePage'));
 const WorkPage = lazy(() => import('@/UI/pages/WorkPage'));
+const ItemPage = lazy(() => import('@/UI/pages/ItemPage'));
 const NotFoundPage = lazy(() => import('@/UI/pages/NotFoundPage'));
 
-// Good post: https://www.dhiwise.com/post/the-power-of-createbrowserrouter-optimizing-your-react-app
-const router = createBrowserRouter(
-  [
-    {
-      path: '/',
-      element: <Layout />,
-      children: [
-        {
-          index: true,
-          element: <HomePage />,
-        },
-        {
-          path: 'work',
-          element: <WorkPage />,
-        },
-        {
-          path: '*',
-          element: <NotFoundPage />,
-        },
-      ],
-    },
-  ],
-  {
-    future: {
-      v7_relativeSplatPath: true,
-      v7_fetcherPersist: true,
-      v7_normalizeFormMethod: true,
-      v7_partialHydration: true,
-      v7_skipActionErrorRevalidation: true,
-    },
-  }
-);
-
 export function Router() {
-  return <RouterProvider router={router} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="work">
+            <Route index element={<WorkPage />} />
+            <Route path=":id" element={<ItemPage />} />
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }

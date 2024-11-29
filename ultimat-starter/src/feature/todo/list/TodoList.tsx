@@ -1,5 +1,16 @@
-import { useSearchParams } from 'react-router-dom';
-import { List, ListItem, LoadingOverlay, Pagination, Paper, Text, Title } from '@mantine/core';
+import { IconInfoCircle } from '@tabler/icons-react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import {
+  Flex,
+  List,
+  ListItem,
+  LoadingOverlay,
+  Pagination,
+  Paper,
+  Text,
+  ThemeIcon,
+  Title,
+} from '@mantine/core';
 import { MockData } from './MockData';
 
 const LIMIT = 5;
@@ -16,6 +27,7 @@ function chunk<T>(array: T[]): T[][] {
 const data = chunk(MockData);
 
 export default function TodoList() {
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = Number(searchParams.get('page') || 1);
 
@@ -24,20 +36,49 @@ export default function TodoList() {
     setSearchParams(searchParams);
   };
 
+  const navigateToItemDetails = (id: string) => () => {
+    navigate(`/work/${id}`);
+  };
+
   return (
-    <Paper pos="relative">
+    <Paper pos="relative" m="xl">
       <LoadingOverlay visible={false} zIndex={1000} overlayProps={{ radius: 'sm', blur: 2 }} />
-      <List>
-        {data[currentPage - 1]?.map((item) => (
-          <ListItem key={item.id}>
-            <Title>{item.title}</Title>
-            <Text>
-              {item.id} : {item.description}
-            </Text>
-          </ListItem>
-        ))}
-      </List>
-      <Pagination total={MockData.length / LIMIT} value={currentPage} onChange={onChange} mt="sm" />
+      <Flex direction="column" align="center" gap="lg">
+        <List
+          spacing="xs"
+          size="sm"
+          icon={
+            <ThemeIcon bg="none" variant="light">
+              <IconInfoCircle />
+            </ThemeIcon>
+          }
+        >
+          {data[currentPage - 1]?.map((item) => (
+            <ListItem
+              key={item.id}
+              maw="600px"
+              style={{
+                border: '1px solid lightblue',
+                padding: '10px',
+                borderRadius: '8px',
+                cursor: 'pointer',
+              }}
+              onClick={navigateToItemDetails(item.id)}
+            >
+              <Title order={3}>
+                {item.id} : {item.title}
+              </Title>
+              <Text>{item.description}</Text>
+            </ListItem>
+          ))}
+        </List>
+        <Pagination
+          total={MockData.length / LIMIT}
+          value={currentPage}
+          onChange={onChange}
+          mt="sm"
+        />
+      </Flex>
     </Paper>
   );
 }
