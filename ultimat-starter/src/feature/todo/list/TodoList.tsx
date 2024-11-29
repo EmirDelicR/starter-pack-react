@@ -11,7 +11,7 @@ import {
   ThemeIcon,
   Title,
 } from '@mantine/core';
-import { MockData } from './MockData';
+import { MockData } from '../store/MockData';
 
 const LIMIT = 5;
 

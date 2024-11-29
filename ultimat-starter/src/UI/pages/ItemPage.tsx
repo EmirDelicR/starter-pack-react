@@ -1,3 +1,5 @@
+import TodoItem from '@/feature/todo/item/TodoItem';
+
 export default function ItemPage() {
-  return <div>Item</div>;
+  return <TodoItem />;
 }
