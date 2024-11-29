@@ -1,5 +1,5 @@
-import { Suspense, useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
 import {
   AppShell,
   Box,
@@ -23,7 +23,6 @@ const NAVIGATION = [
 
 export function Layout() {
   const [opened, { toggle }] = useDisclosure();
-  const [active, setActive] = useState(NAVIGATION[0].label);
   const appName = useAppSelector((state) => state.app_data.name);
   const appVersion = useAppSelector((state) => state.app_data.version);
 
@@ -51,17 +50,13 @@ export function Layout() {
         <Stack justify="space-between" h="100%">
           <Box>
             {NAVIGATION.map((item) => (
-              <Link
+              <NavLink
                 key={item.label}
-                data-active={item.label === active || undefined}
-                className={classes.link}
+                className={({ isActive }) => `${classes.link} ${isActive ? classes.active : ''}`}
                 to={item.link}
-                onClick={() => {
-                  setActive(item.label);
-                }}
               >
                 <UnstyledButton>{item.label}</UnstyledButton>
-              </Link>
+              </NavLink>
             ))}
           </Box>
           <Box>
@@ -76,11 +71,7 @@ export function Layout() {
           <Suspense
             fallback={
               <Box pos="relative" h="90vh">
-                <LoadingOverlay
-                  visible={true}
-                  zIndex={1000}
-                  overlayProps={{ radius: 'sm', blur: 2 }}
-                />
+                <LoadingOverlay zIndex={1000} overlayProps={{ radius: 'sm', blur: 2 }} />
               </Box>
             }
           >
