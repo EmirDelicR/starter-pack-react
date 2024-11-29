@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { List, ListItem, LoadingOverlay, Pagination, Paper, Text, Title } from '@mantine/core';
-import { useGetPaginatedTodosQuery } from '../store/todoApiSlice';
 import { MockData } from './MockData';
 
 const LIMIT = 5;

@@ -1,5 +1,4 @@
 import React, { PropsWithChildren } from 'react';
-import { error } from 'console';
 import { useNavigate } from 'react-router-dom';
 import { Button, Paper, Stack, Text, Title } from '@mantine/core';
 
