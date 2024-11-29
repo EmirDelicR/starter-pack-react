@@ -13,7 +13,8 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import { useAppSelector } from '@/store';
 import { ColorSchemeToggle } from '@/UI/components/colorSchemeToggle/ColorSchemeToggle';
-import ErrorBoundary from '../error/ErrorBoundary';
+import ErrorBoundary from '@/UI/components/error/ErrorBoundary';
+import Logo from '@/UI/components/logo/Logo';
 import classes from './Layout.module.css';
 
 const NAVIGATION = [
@@ -40,6 +41,7 @@ export function Layout() {
         <Group h="100%" px="md" align="center" justify="space-between">
           <Group>
             <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+            <Logo />
             {appName}
           </Group>
           <ColorSchemeToggle />
@@ -61,7 +63,10 @@ export function Layout() {
           </Box>
           <Box>
             <Divider mb="md" />
-            @ED - {appVersion}
+            <Group justify="space-between">
+              <Logo height={40} />
+              @ED - {appVersion}
+            </Group>
           </Box>
         </Stack>
       </AppShell.Navbar>
