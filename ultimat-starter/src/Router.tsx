@@ -1,8 +1,9 @@
 import { lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Layout } from '@/UI/components/Layout/Layout';
+import { Layout } from '@/UI/components/layout/Layout';
 
 const HomePage = lazy(() => import('@/UI/pages/HomePage'));
+const WorkPage = lazy(() => import('@/UI/pages/WorkPage'));
 const NotFoundPage = lazy(() => import('@/UI/pages/NotFoundPage'));
 
 // Good post: https://www.dhiwise.com/post/the-power-of-createbrowserrouter-optimizing-your-react-app
@@ -17,8 +18,8 @@ const router = createBrowserRouter(
           element: <HomePage />,
         },
         {
-          path: 'about',
-          element: <div>About page</div>,
+          path: 'work',
+          element: <WorkPage />,
         },
         {
           path: '*',
