@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import { useNavigate } from 'react-router';
 import { Button, Paper, Stack, Text, Title } from '@mantine/core';
+import { log } from '@/utils/log';
 
 interface State {
   hasError: boolean;
@@ -19,8 +20,7 @@ export default class ErrorBoundary extends React.Component<PropsWithChildren, St
   }
 
   componentDidCatch(error: Error, info: React.ErrorInfo) {
-    // eslint-disable-next-line no-console
-    console.log(error, info.componentStack);
+    log(error.message, 'error', info.componentStack);
     this.setState({ hasError: true, error });
   }
 

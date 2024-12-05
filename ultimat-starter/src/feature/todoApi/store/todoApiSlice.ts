@@ -1,7 +1,6 @@
-import { FetchArgs } from '@reduxjs/toolkit/query';
 import baseApi from '@/store/services/baseApi';
 
-interface Todo {
+export interface Todo {
   id: string;
   title: string;
   description: string;
@@ -22,7 +21,7 @@ interface ApiPaginatedResponse<T> {
 const todoApiSlice = baseApi.enhanceEndpoints({ addTagTypes: ['TodoApiSlice'] }).injectEndpoints({
   endpoints: (builder) => ({
     getPaginatedTodos: builder.query<PaginatedData<Todo>, { limit?: number; offset?: number }>({
-      query: ({ limit, offset }) => '/todos',
+      query: ({ limit, offset }) => `/todos?_start=${offset}&_limit=${limit}`,
       transformResponse: (res: ApiPaginatedResponse<Todo>) => res.data,
       providesTags: ['TodoApiSlice'],
     }),

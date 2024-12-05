@@ -11,10 +11,9 @@ import {
   ThemeIcon,
   Title,
 } from '@mantine/core';
-import { Item } from '@/utils/mocks/MockItems';
 
-export default function TodoList() {
-  const data = useLoaderData<Item[][]>();
+export default function TodoApiList() {
+  const data = useLoaderData();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = Number(searchParams.get('page') || 1);

@@ -1,25 +1,31 @@
 import { lazy } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router';
+import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router';
 import { Layout } from '@/UI/components/layout/Layout';
+import { itemLoader } from '@/UI/pages/work/ItemPage';
+import { itemsLoader } from '@/UI/pages/work/WorkPage';
+import { itemApiLoader } from '@/UI/pages/workApi/ItemApiPage';
+import { itemsApiLoader } from '@/UI/pages/workApi/WorkApiPage';
 
 const HomePage = lazy(() => import('@/UI/pages/HomePage'));
-const WorkPage = lazy(() => import('@/UI/pages/WorkPage'));
-const ItemPage = lazy(() => import('@/UI/pages/ItemPage'));
+const WorkPage = lazy(() => import('@/UI/pages/work/WorkPage'));
+const ItemPage = lazy(() => import('@/UI/pages/work/ItemPage'));
+const WorkApiPage = lazy(() => import('@/UI/pages/workApi/WorkApiPage'));
+const ItemApiPage = lazy(() => import('@/UI/pages/workApi/ItemApiPage'));
 const NotFoundPage = lazy(() => import('@/UI/pages/NotFoundPage'));
 
-export function Router() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="work">
-            <Route index element={<WorkPage />} />
-            <Route path=":id" element={<ItemPage />} />
-          </Route>
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-}
+export const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />}>
+      <Route index element={<HomePage />} />
+      <Route path="work">
+        <Route index element={<WorkPage />} loader={itemsLoader} />
+        <Route path=":id" element={<ItemPage />} loader={itemLoader} />
+      </Route>
+      <Route path="work-api">
+        <Route index element={<WorkApiPage />} loader={itemsApiLoader} />
+        <Route path=":id" element={<ItemApiPage />} loader={itemApiLoader} />
+      </Route>
+      <Route path="*" element={<NotFoundPage />} />
+    </Route>
+  )
+);

@@ -1,4 +1,10 @@
-export const MockData = [
+export type Item = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+export const MOCK_ITEMS = [
   {
     id: '1',
     title: 'Buy groceries',

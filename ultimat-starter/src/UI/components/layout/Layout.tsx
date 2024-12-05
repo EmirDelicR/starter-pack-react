@@ -20,6 +20,7 @@ import classes from './Layout.module.css';
 const NAVIGATION = [
   { link: '/', label: 'Home' },
   { link: '/work', label: 'Work' },
+  { link: '/work-api', label: 'Work Api' },
 ];
 
 export function Layout() {
