@@ -29,6 +29,6 @@ export const getUserLoader = async () => {
       status: Number(status),
     });
   }
-  console.log('data: ', data);
+
   return data;
 };

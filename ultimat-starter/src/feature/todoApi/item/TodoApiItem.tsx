@@ -7,13 +7,11 @@ import { Item } from '@/utils/mocks/MockItems';
 export default function TodoItem() {
   const item = useLoaderData<Item>();
   const user = useRouteLoaderData<User>('user-detail');
-  console.log('USer: ', user);
+  console.log('USER FROM TOP ROUTE: ', user);
 
   let blocker = useBlocker(
     ({ currentLocation, nextLocation }) => currentLocation.pathname !== nextLocation.pathname
   );
-
-  console.log('blocked state: ', blocker);
 
   return (
     <Paper pos="relative" m="xl">

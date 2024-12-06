@@ -57,6 +57,7 @@ export function Layout() {
                 key={item.label}
                 className={({ isActive }) => `${classes.link} ${isActive ? classes.active : ''}`}
                 to={item.link}
+                viewTransition
               >
                 <UnstyledButton>{item.label}</UnstyledButton>
               </NavLink>

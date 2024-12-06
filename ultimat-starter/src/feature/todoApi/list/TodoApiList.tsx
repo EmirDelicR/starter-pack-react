@@ -27,7 +27,7 @@ export default function TodoApiList() {
   };
 
   const navigateToItemDetails = (id: string) => () => {
-    navigate(`/work-api/${id}`);
+    navigate(`/work-api/${id}`, { viewTransition: true });
   };
 
   return (

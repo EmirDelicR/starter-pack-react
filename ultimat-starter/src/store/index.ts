@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
   [baseApi.reducerPath]: baseApi.reducer,
 });
 
-const createStore = (options?: ConfigureStoreOptions['preloadedState'] | undefined) =>
+export const createStore = (options?: ConfigureStoreOptions['preloadedState'] | undefined) =>
   configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(baseApi.middleware),
