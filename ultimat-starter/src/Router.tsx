@@ -5,6 +5,7 @@ import { itemLoader } from '@/UI/pages/work/ItemPage';
 import { itemsLoader } from '@/UI/pages/work/WorkPage';
 import { itemApiLoader } from '@/UI/pages/workApi/ItemApiPage';
 import { itemsApiLoader } from '@/UI/pages/workApi/WorkApiPage';
+import ErrorPage from './UI/pages/ErrorPage';
 
 const HomePage = lazy(() => import('@/UI/pages/HomePage'));
 const WorkPage = lazy(() => import('@/UI/pages/work/WorkPage'));
@@ -21,7 +22,7 @@ export const router = createBrowserRouter(
         <Route index element={<WorkPage />} loader={itemsLoader} />
         <Route path=":id" element={<ItemPage />} loader={itemLoader} />
       </Route>
-      <Route path="work-api">
+      <Route path="work-api" errorElement={<ErrorPage />}>
         <Route index element={<WorkApiPage />} loader={itemsApiLoader} />
         <Route path=":id" element={<ItemApiPage />} loader={itemApiLoader} />
       </Route>
