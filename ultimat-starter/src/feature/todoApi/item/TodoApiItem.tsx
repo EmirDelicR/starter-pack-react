@@ -1,14 +1,24 @@
 import { IconBriefcase } from '@tabler/icons-react';
-import { useLoaderData } from 'react-router';
-import { Box, Flex, Group, LoadingOverlay, Paper, Text, Title } from '@mantine/core';
+import { Link, useBlocker, useLoaderData, useRouteLoaderData } from 'react-router';
+import { Box, Button, Divider, Flex, Group, Modal, Paper, Text, Title } from '@mantine/core';
+import { User } from '@/store/globalState/globalApiSlice';
 import { Item } from '@/utils/mocks/MockItems';
 
 export default function TodoItem() {
   const item = useLoaderData<Item>();
+  const user = useRouteLoaderData<User>('user-detail');
+  console.log('USer: ', user);
+
+  let blocker = useBlocker(
+    ({ currentLocation, nextLocation }) => currentLocation.pathname !== nextLocation.pathname
+  );
+
+  console.log('blocked state: ', blocker);
 
   return (
     <Paper pos="relative" m="xl">
-      <LoadingOverlay visible={false} zIndex={1000} overlayProps={{ radius: 'sm', blur: 2 }} />
+      <Title order={3}>Hello {user?.name}</Title>
+      <Divider mb={'lg'} />
       <Flex direction="column" gap="lg">
         <Title order={2}>
           <Group>
@@ -24,7 +34,27 @@ export default function TodoItem() {
           <Title order={4}>ID:</Title>
           <Text>{item.id}</Text>
         </Box>
+
+        <Link to=".." viewTransition>
+          <Button>Go back</Button>
+        </Link>
       </Flex>
+      <Modal
+        opened={blocker.state === 'blocked'}
+        onClose={() => {}}
+        withCloseButton={false}
+        centered
+        size={'lg'}
+      >
+        <Title>Are you sure you want to leave?</Title>
+
+        <Group my="xl" grow>
+          <Button onClick={() => blocker?.proceed?.()}>Proceed</Button>
+          <Button onClick={() => blocker?.reset?.()} variant="light">
+            Cancel
+          </Button>
+        </Group>
+      </Modal>
     </Paper>
   );
 }

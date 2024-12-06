@@ -4,7 +4,6 @@ import {
   Flex,
   List,
   ListItem,
-  Loader,
   LoadingOverlay,
   Pagination,
   Paper,
@@ -12,6 +11,7 @@ import {
   ThemeIcon,
   Title,
 } from '@mantine/core';
+import Loader from '@/UI/components/loader/Loader';
 import { Todo } from '../store/todoApiSlice';
 
 export default function TodoApiList() {

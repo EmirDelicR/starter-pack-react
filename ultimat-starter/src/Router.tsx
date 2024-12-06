@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router';
 import { Layout } from '@/UI/components/layout/Layout';
+import { userLoader } from '@/UI/pages/HomePage';
 import { itemLoader } from '@/UI/pages/work/ItemPage';
 import { itemsLoader } from '@/UI/pages/work/WorkPage';
 import { itemApiLoader } from '@/UI/pages/workApi/ItemApiPage';
@@ -16,7 +17,7 @@ const NotFoundPage = lazy(() => import('@/UI/pages/NotFoundPage'));
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
+    <Route path="/" element={<Layout />} id="user-detail" loader={userLoader}>
       <Route index element={<HomePage />} />
       <Route path="work">
         <Route index element={<WorkPage />} loader={itemsLoader} />

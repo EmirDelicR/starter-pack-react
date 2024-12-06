@@ -29,3 +29,7 @@ This template comes with the following features:
 ### Other scripts
 
 - `prettier:write` – formats all files with Prettier
+
+https://reactrouter.com/home
+
+https://reactrouter.com/6.28.0/start/overview
